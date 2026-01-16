@@ -870,52 +870,63 @@
             <h3>Escribinos</h3>
             <p style="margin-bottom:12px;">Este formulario es un ejemplo (sin backend). Podés conectarlo a tu email, CRM o WhatsApp.</p>
 
-            <form onsubmit="return fakeSubmit(event)">
-              <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
-                <label style="display:block;">
-                  <span style="display:block; font-size:12px; color:var(--muted2); margin: 0 0 6px;">Nombre</span>
-                  <input required type="text" name="name" placeholder="Tu nombre"
-                    style="width:100%; padding:12px 12px; border-radius:14px; border:1px solid rgba(255,255,255,.14); background: rgba(0,0,0,.18); color:var(--text);" />
-                </label>
+				<form
+				  action="https://docs.google.com/forms/d/e/1FAIpQLSfyk1_i-51w3N0Yj7EGONRdKiFXKCDTkodK-hi1vqbGCueaGw/formResponse"
+				  method="POST"
+				  target="hidden_iframe"
+				  onsubmit="return googleFormSubmit(event)"
+				>
+				  <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
+					<label style="display:block;">
+					  <span style="display:block; font-size:12px; color:var(--muted2); margin: 0 0 6px;">Nombre</span>
+					  <input required type="text" name="entry.1128137121" placeholder="Tu nombre"
+						style="width:100%; padding:12px 12px; border-radius:14px; border:1px solid rgba(255,255,255,.14); background: rgba(0,0,0,.18); color:var(--text);" />
+					</label>
 
-                <label style="display:block;">
-                  <span style="display:block; font-size:12px; color:var(--muted2); margin: 0 0 6px;">Correo</span>
-                  <input required type="email" name="email" placeholder="tucorreo@dominio.com"
-                    style="width:100%; padding:12px 12px; border-radius:14px; border:1px solid rgba(255,255,255,.14); background: rgba(0,0,0,.18); color:var(--text);" />
-                </label>
-              </div>
+					<label style="display:block;">
+					  <span style="display:block; font-size:12px; color:var(--muted2); margin: 0 0 6px;">Correo</span>
+					  <input required type="email" name="entry.2094488878" placeholder="tucorreo@dominio.com"
+						style="width:100%; padding:12px 12px; border-radius:14px; border:1px solid rgba(255,255,255,.14); background: rgba(0,0,0,.18); color:var(--text);" />
+					</label>
+				  </div>
 
-              <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px; margin-top:10px;">
-                <label style="display:block;">
-                  <span style="display:block; font-size:12px; color:var(--muted2); margin: 0 0 6px;">País / Zona</span>
-                  <input type="text" name="region" placeholder="Ej: Guanacaste, Panamá Oeste, etc."
-                    style="width:100%; padding:12px 12px; border-radius:14px; border:1px solid rgba(255,255,255,.14); background: rgba(0,0,0,.18); color:var(--text);" />
-                </label>
+				  <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px; margin-top:10px;">
+					<label style="display:block;">
+					  <span style="display:block; font-size:12px; color:var(--muted2); margin: 0 0 6px;">País / Zona</span>
+					  <input type="text" name="entry.1165691896" placeholder="Ej: Guanacaste, Panamá Oeste, etc."
+						style="width:100%; padding:12px 12px; border-radius:14px; border:1px solid rgba(255,255,255,.14); background: rgba(0,0,0,.18); color:var(--text);" />
+					</label>
 
-                <label style="display:block;">
-                  <span style="display:block; font-size:12px; color:var(--muted2); margin: 0 0 6px;">Tema principal</span>
-                  <select name="topic"
-                    style="width:100%; padding:12px 12px; border-radius:14px; border:1px solid rgba(255,255,255,.14); background: rgba(0,0,0,.18); color:var(--text);">
-                    <option value="agua">Agua (infiltración, humedad, drenaje)</option>
-                    <option value="suelo">Suelo (regeneración, estructura, productividad)</option>
-                    <option value="precision">Agricultura de precisión (medición, sensores)</option>
-                    <option value="datos">Datos y GIS (mapas, variabilidad, análisis)</option>
-                    <option value="otro">Otro</option>
-                  </select>
-                </label>
-              </div>
+					<label style="display:block;">
+					  <span style="display:block; font-size:12px; color:var(--muted2); margin: 0 0 6px;">Tema principal</span>
+					  <select name="entry.1612514111"
+						style="width:100%; padding:12px 12px; border-radius:14px; border:1px solid rgba(255,255,255,.14); background: rgba(0,0,0,.18); color:var(--text);">
+						<option value="Agua (infiltración, humedad, drenaje)">Agua (infiltración, humedad, drenaje)</option>
+						<option value="Suelo (regeneración, estructura, productividad)">Suelo (regeneración, estructura, productividad)</option>
+						<option value="Agricultura de precisión (medición, sensores)">Agricultura de precisión (medición, sensores)</option>
+						<option value="Datos y GIS (mapas, variabilidad, análisis)">Datos y GIS (mapas, variabilidad, análisis)</option>
+						<option value="Otro">Otro</option>
+					  </select>
+					</label>
+				  </div>
 
-              <label style="display:block; margin-top:10px;">
-                <span style="display:block; font-size:12px; color:var(--muted2); margin: 0 0 6px;">Mensaje</span>
-                <textarea required name="message" rows="5" placeholder="Contanos el contexto y el objetivo..."
-                  style="width:100%; padding:12px 12px; border-radius:14px; border:1px solid rgba(255,255,255,.14); background: rgba(0,0,0,.18); color:var(--text); resize: vertical;"></textarea>
-              </label>
+				  <label style="display:block; margin-top:10px;">
+					<span style="display:block; font-size:12px; color:var(--muted2); margin: 0 0 6px;">Mensaje</span>
+					<textarea required name="entry.540142033" rows="5" placeholder="Contanos el contexto y el objetivo..."
+					  style="width:100%; padding:12px 12px; border-radius:14px; border:1px solid rgba(255,255,255,.14); background: rgba(0,0,0,.18); color:var(--text); resize: vertical;"></textarea>
+				  </label>
 
-              <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px; align-items:center;">
-                <button class="btn primary" type="submit">Enviar</button>
-                <span id="formMsg" style="color:var(--muted2); font-size:12.5px;"></span>
-              </div>
-            </form>
+				  <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px; align-items:center;">
+					<button class="btn primary" type="submit" id="submitBtn">Enviar</button>
+
+					<span id="formMsg" style="color:var(--muted2); font-size:12.5px;"></span>
+				  </div>
+				</form>
+
+				<iframe name="hidden_iframe" style="display:none;"></iframe>
+
+
+
           </article>
 
           <aside class="card">
@@ -994,39 +1005,65 @@
     </footer>
   </main>
 
-  <script>
-    // Mobile menu
-    const menuBtn = document.getElementById("menuBtn");
-    const drawer = document.getElementById("drawer");
+<script>
+  // Mobile menu
+  const menuBtn = document.getElementById("menuBtn");
+  const drawer = document.getElementById("drawer");
 
-    if (menuBtn && drawer) {
-      menuBtn.addEventListener("click", () => {
-        const open = drawer.style.display === "block";
-        drawer.style.display = open ? "none" : "block";
-        menuBtn.setAttribute("aria-expanded", String(!open));
-      });
+  if (menuBtn && drawer) {
+    menuBtn.addEventListener("click", () => {
+      const open = drawer.style.display === "block";
+      drawer.style.display = open ? "none" : "block";
+      menuBtn.setAttribute("aria-expanded", String(!open));
+    });
 
-      // Close drawer after click
-      drawer.querySelectorAll("a").forEach(a => {
-        a.addEventListener("click", () => {
-          drawer.style.display = "none";
-          menuBtn.setAttribute("aria-expanded", "false");
-        });
+    // Close drawer after click
+    drawer.querySelectorAll("a").forEach(a => {
+      a.addEventListener("click", () => {
+        drawer.style.display = "none";
+        menuBtn.setAttribute("aria-expanded", "false");
       });
+    });
+  }
+
+  // Year
+  const yearEl = document.getElementById("year");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  // Google Form submit handler
+  function googleFormSubmit(e){
+    const msg = document.getElementById("formMsg");
+    const btn = document.getElementById("submitBtn");
+
+    if (btn) {
+      btn.textContent = "Enviado";
+      btn.disabled = true;
+      btn.style.opacity = ".65";
+      btn.style.cursor = "not-allowed";
     }
 
-    // Year
-    document.getElementById("year").textContent = new Date().getFullYear();
+    if (msg) msg.textContent = "Recibido. Te contactamos pronto.";
 
-    // Fake submit (replace with your backend / email / CRM)
-    function fakeSubmit(e){
-      e.preventDefault();
-      const msg = document.getElementById("formMsg");
-      msg.textContent = "Listo. Recibido (demo). Conectá este formulario a tu correo/CRM para que sea real.";
-      setTimeout(() => { msg.textContent = ""; }, 6000);
-      e.target.reset();
-      return false;
-    }
-  </script>
+    // Limpia el formulario (después de que el POST salga al iframe)
+    setTimeout(() => {
+      if (e && e.target) e.target.reset();
+    }, 200);
+
+    // Opcional: reactivar botón
+    setTimeout(() => {
+      if (btn) {
+        btn.textContent = "Enviar";
+        btn.disabled = false;
+        btn.style.opacity = "1";
+        btn.style.cursor = "pointer";
+      }
+      if (msg) msg.textContent = "";
+    }, 8000);
+
+    return true;
+  }
+</script>
+
+
 </body>
 </html>
