@@ -1,0 +1,126 @@
+@font-face {
+  font-family: 'falker';
+  src:  url('fonts/falkerbbd6.eot?vicbol');
+  src:  url('fonts/falkerbbd6.eot?vicbol#iefix') format('embedded-opentype'),
+    url('fonts/falkerbbd6.ttf?vicbol') format('truetype'),
+    url('fonts/falkerbbd6.woff?vicbol') format('woff'),
+    url('fonts/falkerbbd6.svg?vicbol#falker') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-falker-"], [class*=" icon-falker-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'falker' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-falker-robustness:before {
+  content: "\e91d";
+}
+.icon-falker-safety:before {
+  content: "\e91e";
+}
+.icon-falker-efficiency:before {
+  content: "\e91f";
+}
+.icon-falker-comfort:before {
+  content: "\e920";
+}
+.icon-falker-plg:before {
+  content: "\e91c";
+}
+.icon-falker-arrow-repeat:before {
+  content: "\e900";
+}
+.icon-falker-browser-import:before {
+  content: "\e901";
+}
+.icon-falker-car-quadricycle:before {
+  content: "\e902";
+}
+.icon-falker-car-tractor:before {
+  content: "\e903";
+}
+.icon-falker-car-tractor-alt:before {
+  content: "\e904";
+}
+.icon-falker-car-trailer:before {
+  content: "\e905";
+}
+.icon-falker-car-utv:before {
+  content: "\e906";
+}
+.icon-falker-car-van:before {
+  content: "\e907";
+}
+.icon-falker-finger-click:before {
+  content: "\e908";
+}
+.icon-falker-finger-touch:before {
+  content: "\e909";
+}
+.icon-falker-finger-touch-left:before {
+  content: "\e90a";
+}
+.icon-falker-gear:before {
+  content: "\e90b";
+}
+.icon-falker-graph-variable-rate:before {
+  content: "\e90c";
+}
+.icon-falker-line-box-open:before {
+  content: "\e90d";
+}
+.icon-falker-line-clock:before {
+  content: "\e90e";
+}
+.icon-falker-line-cloud-data:before {
+  content: "\e90f";
+}
+.icon-falker-line-diagram:before {
+  content: "\e910";
+}
+.icon-falker-line-high-density:before {
+  content: "\e911";
+}
+.icon-falker-line-interpolation:before {
+  content: "\e912";
+}
+.icon-falker-line-map-marked:before {
+  content: "\e913";
+}
+.icon-falker-line-processor:before {
+  content: "\e914";
+}
+.icon-falker-line-ruler:before {
+  content: "\e915";
+}
+.icon-falker-map-management-zones:before {
+  content: "\e916";
+}
+.icon-falker-screen-size:before {
+  content: "\e917";
+}
+.icon-falker-seed-bag:before {
+  content: "\e918";
+}
+.icon-falker-tools:before {
+  content: "\e919";
+}
+.icon-falker-training:before {
+  content: "\e91a";
+}
+.icon-falker-user-call-center-operator:before {
+  content: "\e91b";
+}

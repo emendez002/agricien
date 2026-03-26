@@ -1,0 +1,10 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+www.falker.com.br	TRUE	/	FALSE	1999999999	allowed-cookies-falker-site	1
+.falker.com.br	TRUE	/	FALSE	1999999999	XSRF-TOKEN	eyJpdiI6IkRRN0ZwODVudUVyZnB4Vms2aTJyL0E9PSIsInZhbHVlIjoiNFo3U2VQbG9NdXF0SG5EbGFmM1JzRUNIaW5BMmM0ajRYeVp2WG1aQkJhczFQMWo0akxOVmFnRzdxVDd1N0FXZ2Q1eXBPbTdFNDRyY1NvWmc2ZUtta2FHZ1AxdFFTUldpVXRHRDVKaWg4Uk1ueDBoV0JqVlJFNlhrYVFhc0ROZ0UiLCJtYWMiOiI5NWZjMGU5MWI2YmE4MWJmYTQ4ZTlkZjYyYjY1N2U2YzI4ZDc0NTQ4ZTRiY2YxNjdkMjczZmNmZTk1ZDNkNWQ2IiwidGFnIjoiIn0%3D
+.falker.com.br	TRUE	/	FALSE	1999999999	falker_site_session	huHvPK1ehsS3Lek7xRfJGHcoW5CuwAHHOWhjJZVw
+www.falker.com.br	TRUE	/	FALSE	1999999999	samesite	lax
+.vimeo.com	TRUE	/	FALSE	1999999999	__cf_bm	z3uE30QxE9ndoNvDwMceJKLPk.uQoS1iEz8O1n7Lw4o-1774505427-1.0.1.1-qmvC92T_kt6OiaqQ_MVhTSG_3tHJ9AliVtCn7fKhu_AELRQ2ADUkuyNxAY5GKciK
+.vimeo.com	TRUE	/	FALSE	1999999999	_cfuvid	K2GtJzbUHkFs_ctwqB6eMmMTiPOPMybpTI5SM3CzfvY-1774505427103-0.0.1.1-604800000
+player.vimeo.com	TRUE	/	FALSE	1999999999	SameSite	None
+

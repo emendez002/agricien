@@ -1,0 +1,22 @@
+HTTrack3.49-2+htsswf+htsjava launched on Thu, 26 Mar 2026 00:19:36 at https://www.setena.go.cr/ +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "en, *" https://www.setena.go.cr/ -O1 "F:\setena\setena" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+00:22:28	Warning: 	Retry after error -4 (Connect Error) at link themes.tweaco.com/Frameworks/tweaco/images/tweaco_footer.png (from themes.indigo.kryonics.net/frameworks/tweaco/css/tweaco.css)
+00:22:28	Error: 	"Not Found" (404) at link themes.indigo.kryonics.net/frameworks/tweaco/css/none (from themes.indigo.kryonics.net/frameworks/tweaco/css/tweaco.css)
+00:22:28	Error: 	"Not Found" (404) at link themes.indigo.kryonics.net/c/images/breadcrumbullet.gif (from themes.indigo.kryonics.net/c/setena.go.cr/css/navs.css)
+00:22:28	Error: 	"Not Found" (404) at link themes.indigo.kryonics.net/c/setena.go.cr/css/screen/images/button_gray.png (from themes.indigo.kryonics.net/c/setena.go.cr/css/forms.css)
+00:22:28	Error: 	"Not Found" (404) at link themes.indigo.kryonics.net/c/setena.go.cr/css/screen/images/button_red.png (from themes.indigo.kryonics.net/c/setena.go.cr/css/forms.css)
+00:22:28	Error: 	"Not Found" (404) at link themes.indigo.kryonics.net/c/setena.go.cr/css/screen/images/button_yellow.png (from themes.indigo.kryonics.net/c/setena.go.cr/css/forms.css)
+00:22:28	Error: 	"Not Found" (404) at link themes.indigo.kryonics.net/c/setena.go.cr/images/icons-cat-resid.png (from themes.indigo.kryonics.net/c/setena.go.cr/css/catalog.css)
+00:22:28	Error: 	"Not Found" (404) at link themes.indigo.kryonics.net/c/setena.go.cr/css/screen/none (from themes.indigo.kryonics.net/c/setena.go.cr/css/theme.css)
+00:24:07	Error: 	"Not Found" (404) at link https://www.setena.go.cr/Downloads/organigrama/organigrama-setena2025.png (from https://www.setena.go.cr/es/Nosotros)
+00:25:04	Warning: 	Retry after error -4 (Connect Error) at link themes.tweaco.com/Frameworks/tweaco/images/tweaco_footer.png (from themes.indigo.kryonics.net/frameworks/tweaco/css/tweaco.css)
+00:25:38	Error: 	"Connect Error" (-4) after 2 retries at link themes.tweaco.com/Frameworks/tweaco/images/tweaco_footer.png (from themes.indigo.kryonics.net/frameworks/tweaco/css/tweaco.css)
+
+HTTrack Website Copier/3.49-2 mirror complete in 6 minutes 3 seconds : 637 links scanned, 624 files written (215747130 bytes overall) [211372746 bytes received at 582294 bytes/sec], 6631565 bytes transferred using HTTP compression in 294 files, ratio 31%
+(9 errors, 2 warnings, 0 messages)

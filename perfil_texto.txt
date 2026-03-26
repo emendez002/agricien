@@ -1,0 +1,464 @@
+   
+Contactar
+(506) 72303165 (Mobile)
+edgarmendezduran@gmail.com
+www.linkedin.com/in/edgar-
+mendez-02702539 (LinkedIn)
+Aptitudes principales
+QGIS
+PostgreSQL
+IA
+Certifications
+CURSO EN LINEA NAVEGACIÓN
+GENERAL DE SAP
+Green Digital Skills Certificate
+Introduction to R Online Course
+B1 English Level EF SET Certificate
+Data Analysis with Spreadsheets
+Honors-Awards
+Mejor Tutor del Año Área Cultural
+Publications
+Conferencia Investigación
+Multimedia, Uso de Base de Datos
+y Mapas.  Taller de Periodismo de
+Investigación, IUDPAS,
+Escuelas y colegios tienen más
+de 40.000 alumnos fantasmas
+(Colaboración)
+¿Cómo calcular la longitud y latitud
+de un epicentro usando solo el
+tiempo de arribo de la onda P”?
+2009, Terremoto de Cinchona:
+interpretación preliminar de las
+intensidades sísmicas registradas
+COAUTOR
+Paraíso de Volcanes, Publicación 5
+Infografías (Edición Periódico aprox
+506261 ejemplares)
+Edgar Mendez
+Business Intelligence Area
+Costa Rica
+Extracto
+Soy profesional con más de 25 años de experiencia en inteligencia
+de negocios, sistemas de información geográfica (SIG), minería de
+datos y análisis cualitativo y cuantitativo de información espacial
+y tabular. He liderado y participado en proyectos internacionales
+en América, Europa, Asia, Oceanía y África, aportando soluciones
+efectivas y personalizadas a organizaciones públicas y privadas.
+Mi trayectoria incluye estudios de factibilidad agrícola de gran
+escala, análisis espacial para proyectos de energías renovables,
+certificaciones ambientales y desarrollo de planes de gestión
+ambiental. Asimismo, he brindado formación en bases de datos y
+data warehousing, y ejerzo como profesor universitario.
+Hasta hace poco, trabajé como Analista de Negocios en la Red
+de Servicios de Salud del Instituto Nacional de Seguros (INS).
+Actualmente, me encuentro en disponibilidad inmediata para asumir
+nuevos retos profesionales.
+Estoy abierto a oportunidades donde pueda contribuir con mi
+experiencia en business intelligence, SIG, análisis de datos y
+sostenibilidad territorial.
+Experiencia
+Agricultura Científica S.A. · Contract
+Diseños para Manejo de Agua, Suelos y Pastos con Lineas de
+Infiltración Ganaderia Sostenible
+julio de 2025 - Present (9 meses)
+Guanacaste, Costa Rica
+Diseño para 45 fincas de líneas de infiltración (hipsolineas) para
+implementación con arado YeomansPlow. 
+Objetivo: Aumento de hato, bienestar animal y producció por medio de la
+retención de agua en las fincas, aumento en biomasa en época lluviosa,
+mantenimiento de pastos verdes en época seca.
+  Page 1 of 12
+   
+Diseños mecanizables en corto tiempo, más eficientes en tiempo de
+implementación , efectivos hidraulicamente para llevar agua desde los fluvios
+a los interfluvios
+Bio Terra Consultores Ambientales
+Consultor  Elaboración Estudios de cambio de uso del suelo (LUCC),
+norma RSPO
+octubre de 2015 - Present (10 años 6 meses)
+San José, Costa Rica
+Estudios de cambio de uso del suelo (LUCC).
+Análisis espacial para la certificación de la Mesa Redonda sobre Aceite de
+Palma Sostenible (RSPO).
+JAREMAR, HONDURAS, 2015.
+INDUSPALMA, REPÚBLICA DOMINICANA, 2017.
+AGROPALMA, HONDURAS, 2017.
+UUMBAL, MÉXICO, 2018.
+AGROINDUSTRIAL DE PALMA ACEITERA, COLOMBIA, 2018.
+PROPALMA, MÉXICO, 2019.
+ASAPALSA, HONDURAS, 2019.
+PALMOSUR, MÉXICO, 2019.
+DINANT, HONDURAS, 2020.
+JAREMAR AGROGUAN, HONDURAS, 2020.
+PROLADE, MÉXICO, 2021.
+FINCA CACAO, PERÚ, 2022.
+DE PALMA, REPÚBLICA DOMINICANA, 2022.
+NATURACEITES, GUATEMALA, 2022.
+TABOGA, GRAS/ISCC, COSTA RICA, 2022.
+PALMAWASI, PERÚ, 2022.
+SHANUSI, PERÚ, 2022.
+JAREMAR MURRAY, HONDURAS, 2022.
+JAREMAR SERMISA, HONDURAS, 2022.
+JAREMAR CAICESA, HONDURAS, 2022.
+JAREMAR PALSA, HONDURAS, 2022.
+VLADIMIR, MÉXICO, 2022.
+CONCHITAS, MÉXICO, 2022.
+PALCASA, NICARAGUA, 2023.
+CHIQUIBUL, GUATEMALA, 2023.
+SANTA ISABEL HERRADURA, MEXICO, 2023.
+LAS VICTORIAS, GUATEMALA, 2024
+ISCC, HONDURAS,2024.
+  Page 2 of 12
+   
+ASAPALSA, HONDURAS, 2025
+SHARON, PANAMA, 2025.
+CHIQUIBUL, GUATEMALA, 2026
+PALMATEC, COSTA RICA, 2026.
+Generación de procesos automatizados para el procesamiento de imágenes
+Landsat 7 Nivel 1 y 2, imágenes Landsat 8, 9 Nivel 1 y 2, Sentinel en las
+plataformas R, Python, y Google Earth Engine.
+Extracción de límites de cuencas.
+Extracción y clasificación de sistemas de drenaje.
+Universidad de Costa Rica UCR
+Profesor Universitario
+agosto de 2025 - marzo de 2026 (8 meses)
+Limón, Costa Rica
+Imparto un curso integral y aplicado de Biogeografía para estudiantes de
+Bachillerato en Turismo Ecológico, combinando fundamentos teóricos con
+análisis geoespacial mediante QGIS, Google Earth y Google Earth Engine. El
+programa aborda la interpretación de patrones de distribución de especies,
+fragmentación del paisaje y estrategias de conservación de la biodiversidad.
+Responsabilidades:
+Enseñar temas clave como geología, climatología, edafología, filogeografía,
+distribución de especies, biogeografía marina y costera, impactos humanos y
+planificación de la conservación.
+Guiar prácticas de SIG: elaboración de cartografía, análisis de datos
+espaciales y cálculo de métricas de paisaje (NP, MPS, SHAPE, PROX, SHDI,
+FI).
+Liderar giras de campo para levantamiento de datos, validación de
+información geoespacial y estudios de conservación aplicada.
+Asesorar proyectos estudiantiles que vinculen conceptos biogeográficos con el
+manejo sostenible del turismo.
+  Page 3 of 12
+   
+Este curso forma profesionales capaces de interpretar patrones ambientales
+complejos y proponer soluciones de conservación respaldadas por evidencia
+geoespacial, con una visión integrada entre ciencia y turismo sostenible.
+Geosolution Consulting SAC
+Instructor GIS & Consultor Técnico
+octubre de 2025 - diciembre de 2025 (3 meses)
+Panama - El Salvador
+Impartí programas de capacitación especializada en SIG para perfiles
+ejecutivos y operativos. Diseñé e implementé módulos formativos enfocados
+en fundamentos conceptuales, formatos geoespaciales, SIG Web, bases de
+datos espaciales, inteligencia artificial aplicada y normas ISO para metadatos
+y catastro. Las sesiones combinaban teoría, ejercicios prácticos y actividades
+asincrónicas con datasets reales.
+Red de Servicios de Salud Grupo INS
+Analista de Inteligencia de Negocio, Profesional II
+diciembre de 2022 - junio de 2025 (2 años 7 meses)
+Costa Rica
+Diseño de sistemas de visualización de datos que contribuyan a la toma de
+decisiones.
+Creación de cartografía y análisis espacial para Plan Maestro Actual
+Construcción y análisis de indicadores estratégicos, tácticos u operativos, 
+Análisis multivariantes, diseño de experimentos, modelos lineales generales,
+pronósticos, minería de datos, machine learning, entre otros. 
+Creación de la aplicación de reserva de estacionamiento y de la aplicación de
+reserva de oficinas y activos con Power Platform.
+Universidad Estatal a Distancia de Costa Rica
+Profesor Universitario
+mayo de 1997 - junio de 2025 (28 años 2 meses)
+Montes de Oca, Costa Rica
+Cursos
+Montañismo y Orientación en el Campo, Código 863
+Sistemas de Información Geográfica, Código 9540
+Climatología, Código 864
+Geografía Física de Costa Rica, Código 861
+Geología, Código 646 
+Universidad de Costa Rica UCR
+  Page 4 of 12
+   
+Professor
+marzo de 2022 - octubre de 2022 (8 meses)
+Alajuela, Costa Rica
+Curso: Geografía Ambiental, ID: OG-1401
+Curso: Geografía Regional de América, ID: OG- 1309 
+Curso: Geografía Regional de América Central, ID: OG- 4118 
+Curso: Geografía Mundial, ID: OG- 1308
+San Ramón Campus
+Agricultura Científica S.A. · Contract
+Análisis de factibilidad técnica para el cultivo de arroz en Tormabum y
+Rhombe
+junio de 2021 - octubre de 2022 (1 año 5 meses)
+Sierra Leona
+Proyectos de factibilidad para Elite Agro (EAG)
+Procesamiento de 9.6 billones de puntos lidar para proyecto en Tormabum,
+clasificación y filtrado.
+Generación de Modelos de Superficie y Terreno. Obtención de derivadas
+espaciales
+Análisis con teledetección de ocurrencias de inundación desde 1984 a la
+actualidad con Google Earth Engine y R
+Determinación de área anegada estacional y permanente
+Determinación de áreas con pendiente apta para cultivo de arroz
+Diseño preliminar de caminos principales de acceso evitando adversidades
+morfológicas e hidrológicas
+Determinación de reservorios, puntos de recarga, canales de drenaje  y
+canales de riego principales
+Cálculo de cortes y rellenos
+Recomendación al cliente de la factibilidad técnica del proyecto.
+Recomendaciones y exposición de limitaciones y criterio experto
+Procesamiento de 680 millones de puntos lidar para proyecto en Rhombe,
+clasificación y filtrado.
+Generación de Modelos de Superficie y Terreno
+Obtención de derivadas espaciales
+Análisis con teledetección de ocurrencias de inundación desde 1984 a la
+actualidad con Google Earth Engine y R
+Determinación de área anegada estacional y permanente
+Recomendación al cliente de la factibilidad técnica del proyecto.
+  Page 5 of 12
+   
+Universidad del Turismo
+Profesor Universidad 
+mayo de 2022 - septiembre de 2022 (5 meses)
+Costa Rica
+Curso: Cartografía que brinda instrucción, desarrolla el plan de estudios,
+planifica lecciones, facilita el aprendizaje a través de actividades y debates,
+evalúa el progreso de los estudiantes y brinda retroalimentación, ofrece
+orientación y apoyo, administra recursos, promueve actividades colaborativas
+y participa en el desarrollo profesional. Rol en la impartición de conocimientos
+cartográficos, el fomento de las habilidades de los estudiantes y su
+preparación para aplicar la cartografía de manera efectiva en la industria del
+turismo.
+GEOSTELECOM para Municipalidad de Buenos Aires
+Consultor Optimización de Rutas  y PGAI
+febrero de 2021 - marzo de 2022 (1 año 2 meses)
+Buenos Aires, Puntarenas, Costa Rica
+Diagnóstico de Proceso de Recolección de Residuos Solidos, Organicos y
+Varolizables.
+Zonificación y Balanceo de Rutas con el objetivo de mejorar cobertura,
+penetración y percepción del servicio.
+Levantamiento en campo de inventario de insumos para Elaboración de Plan
+de Gestión Ambiental Institucional.
+Colaboración en el diseño, y elaboración de formularios para automatizar
+procesos relacionados con el PGAI.
+Universidad de Costa Rica
+Profesor universitario
+agosto de 2021 - diciembre de 2021 (5 meses)
+Sede de Occidente
+cursos: OG1220 Principios Geofísicos, Recinto de Tacares, 
+curso OG4118 Geografía Regional de América Central, Recinto San Ramón
+Universidad del Turismo
+Profesor Universitario
+mayo de 2021 - agosto de 2021 (4 meses)
+Sabana, San José, Costa Rica
+Curso: Cartografía que brinda instrucción, desarrolla el plan de estudios,
+planifica lecciones, facilita el aprendizaje a través de actividades y debates,
+evalúa el progreso de los estudiantes y brinda retroalimentación, ofrece
+  Page 6 of 12
+   
+orientación y apoyo, administra recursos, promueve actividades colaborativas
+y participa en el desarrollo profesional. Rol en la impartición de conocimientos
+cartográficos, el fomento de las habilidades de los estudiantes y su
+preparación para aplicar la cartografía de manera efectiva en la industria del
+turismo.
+Universidad de Costa Rica
+Profesor Universitario
+agosto de 2020 - diciembre de 2020 (5 meses)
+Costa Rica
+Curso OG-3111 Geografía Urbana y Rural
+Universidad de Costa Rica, Campus Occidental
+Licenciatura en la Enseñanza de Estudios Sociales y Educación Cívica.
+TIGO COSTA RICA
+Business Intelligence Specialist
+septiembre de 2018 - agosto de 2020 (2 años)
+Fórum 2 Office Park, Building D, 3 Floor San José, Costa Rica
+Funciones:
+Extracción, Transformación y Carga de Datos (ETL) 
+SQL Server
+María DB
+R
+KNIME
+Generación de Reportes Comerciales, y Gerenciales
+Tableau
+PowerBI
+Microsoft Excel
+Creación de metodologías y algoritmos para análisis de información y
+generación de propuestas comerciales.
+Prospección y análisis de riesgos
+Agricultura Científica S.A.
+UAV, Lidar, Ordenamiento Territoria, SIG, AWS y Tedetección
+noviembre de 2017 - agosto de 2018 (10 meses)
+Uruca, San José, Costa Rica
+Proceso de análisis espacial con formatos vectoriales, raster (lidar, satélite
+y UAV) para diseño de ridges (surcos en contorno), keylines, caminos y
+drenajes.
+  Page 7 of 12
+   
+Generación de ortomosaicos, modelos de superficie y terreno, cálculo de
+pendientes
+Desarrollo de aplicaciones Web y Mapbasic para un proyecto de Agricultura
+de Precisión, en Hacienda Mojica (2009).
+Diseño e implementación de proceso de cálculo de modelos de elevación
+y generación de ortomosaicos a partir de imágenes capturadas por drones
+(UAV)
+Análisis de información LIDAR, DTM,DSM, Ortoimágenes, UAV, e Imágenes
+Espectrales (planet.org),para proyecto AgroForestal en Kalimantan Central,
+Indonesia
+Trabajo de campo, levantamiento de caminos existentes, infraestructura, uso
+actual del suelo, muestreo de suelo para análisis físico, químico, en proyecto
+AgroForestal en Kalimantan Central, Borneo, Indonesia
+Análisis de pendientes para categorización de uso agrícola mecanizado,
+mecanizado con limitaciones, intercropping y protección. 
+Verificación en campo de usos propuestos y de análisis de pendientes, en
+proyecto AgroForestal en Kalimantan Central, Borneo, Indonesia
+Navegación y guía de grupo de expertos en montaña para toma de
+observaciones y muestras en campo, en proyecto AgroForestal en Kalimantan
+Central, Borneo, Indonesia
+Grupo Nación
+18 años 3 meses
+Ingeniero de datos
+octubre de 2016 - agosto de 2018 (1 año 11 meses)
+Tibás, Costa Rica
+Funciones:
+Creación de sistemas de procesamiento de datos
+Priorización de la información según la relevancia para la empresa
+Gestión de arquitectura de hardware para gestión eficiente de datos
+Procesos ETL
+Identificación de oportunidades, soluciones, determinación de riesgos
+basados en el análisis de los datos, generación de reportes, dirigidos a
+Gerencia y  Jefes de unidades de negocios.
+Identificación de Audiencias, envió de mensajes dirigidos a targets
+específicos, creación y  aplicación de encuestas.
+Desarrollo en R, Python, PHP
+Automatización de procesos CURL, API Emarsys, Api
+Gestor de Nuevas Tecnologías
+  Page 8 of 12
+   
+marzo de 2014 - septiembre de 2016 (2 años 7 meses)
+Tibas, San José, Costa Rica
+Desarrollo e implementación de Hardware utilizando computación física con
+integrados Open Hardware y propietarios.
+Investigación de nuevas tecnologías que permitan mejorar eficacia y optimizar
+procesos, generar nuevos productos o información que generen valor al
+cliente.Evaluar hardware para implementación de software  in house y
+outsourcing.
+Zonificación de áreas de comercialización de productos, Optimización de
+Rutas.
+Anàlisis de documentación ambiental, telecomunicaciones, ordenamiento
+territorial, geolocalizaciòn de puntos de interés y  procesos de extracción,
+modificación y carga de bases de datos públicas, entre otros con fines
+periodìsticos y en algunas ocasiones para toma de decisiones empresariales.
+Colaborar con el personal de Inteligencia, en procesos de geomarketing,
+perfilamiento de clientes.
+Procesos ETL, Data Mining
+Asesoría y Capacitación a Instituciones con convenios vigentes firmados con
+GN:  INEC y Florida Ice & Farm, COOPANA
+Encargado de Nuevas Tecnologías
+diciembre de 2012 - febrero de 2014 (1 año 3 meses)
+Tibas, San José, Costa Rica
+Investigación de nuevas tecnologías que permitan mejorar eficacia y optimizar
+procesos, generar nuevos productos o información que generen valor al
+cliente.Evaluar hardware para implementación de software  in house y
+outsourcing.
+Colaborar con el Arquitecto Empresarial en investigación e implementación de
+estándares.
+Asesoría y Capacitación a Instituciones con convenios vigentes firmados con
+GN:  INEC y Florida Ice & Farm
+Supervisor Sistemas de Información Geográfica
+octubre de 2004 - noviembre de 2012 (8 años 2 meses)
+Tibas, San José, Costa Rica
+Coordinar y controlar el desarrollo y disponibilidad del sistema de información
+geográfica, de acuerdo con planes y programas de trabajo, bases de
+datos complementarias y necesidades específicas, con el fin de facilitar la
+herramienta para análisis y toma de decisiones por parte d e los clientes que
+demandan el servicio.
+  Page 9 of 12
+   
+Coordinar y controlar el desarrollo y mantenimiento de los datos y la
+información que alimentan al Sistema de Información Geográfica.
+Coordinar y controlar la atención y asesoría acerca de la agrupación de
+información y generación de reportes geográficos, con el fin de proporcionar
+variables diversas que permitan la programación de actividades, el soporte,
+la toma de decisiones, el análisis de penetración, la optimización de rutas, la
+selección de alternativas, la garantía de un efectivo reparto del producto y el
+análisis demográfico y sociodemográfico del mercado.
+Promover la utilización y el soporte técnico a usuarios del Sistema de
+Información Geográfica, con el fin de que cada área opere y obtenga el
+servicio oportunamente.
+Investigar, evaluar y recomendar oportunidades de adquisición y ampliación
+de herramientas alternativas al sistema de información geográfica.
+Ingeniero Sistemas de Información Geográfica
+junio de 2000 - septiembre de 2004 (4 años 4 meses)
+Tibas, San José, Costa Rica
+Desarrollar y mantener actualizada la información y datos que alimentan al
+Sistema de Información  Geográfica con el fin de disponer de una plataforma
+para el análisis y toma de decisiones por parte de los clientes que demandan
+el servicio.
+Brindar atención y asesoría acerca de la agrupación de información y
+generación de reportes geográficos, con el fin de proporcionar variables
+diversas que permitan el planeamiento de actividades, el soporte, la toma de
+decisiones, el análisis de penetración, la optimización de rutas, la selección
+de alternativas, la garantía de un efectivo reparto del producto y el análisis
+demográfico y sociodemográfico del mercado.
+Promover la utilización y el soporte técnico a usuarios del Sistema de
+Información Geográfica, con el fin de que cada área opere y obtenga el
+servicio oportunamente.
+Investigar, evaluar y recomendar oportunidades de adquisición y ampliación
+de herramientas alternativas al sistema de información geográfica.
+Implementación de tecnología Google Earth Enterprise en el desarrollo del
+sitio mapas.nacion.com (deprecado)
+Procesos de fotointerpretación, ortocorrección, utilización de información
+satelital (espectro visible y no visible), vectorización entre otros. 
+Poder Judicial Costa Rica
+Consultor
+agosto de 2015 - septiembre de 2015 (2 meses)
+San José, Central
+  Page 10 of 12
+   
+Elaboración de Informe y generación de mosaico catastral, Expediente
+10-000048-0958-CI, Juzgado Concursal de San José, Proceso Quiebra
+COOTILARAN COMERCIAL S.A.
+Agricultura Cientifica S.A.
+Analista de requerimientos GNSS, SIG 
+agosto de 2011 - marzo de 2012 (8 meses)
+Uruca, San José, Costa Rica
+Levantamiento de requerimientos para desarrollo Aplicación RiceCheck
+cuyo fin es levantamiento de información en campo, análisis multivariado de
+información meteorológica, hidrológica, edafológica, plagas, enfermedades,
+topográficas, para el mejoramiento de los rendimientos del Cultivo del Arroz
+en Costa Rica
+Generación de procesos automatizados para procesamiento de imágenes
+Planet, Rapideye
+Extracción de límites de cuencas
+Extracción y clasificación de drenajes
+Extracción de interfluvios
+Diseño de lotes
+Diseño de drenajes
+Diseño de caminos de acceso
+Centro Nacional de Alta Tecnología
+Coordinador proyecto de escaneo de imágenes
+junio de 2005 - julio de 2006 (1 año 2 meses)
+San José, Pavas
+Administración del recurso humano y tecnológico del proyecto de escaneo de
+imágenes analógicas de Misión CARTA 2005, para Unidad Ejecutora del Plan
+de Regularización de Catastro y Registro Nacional.
+Desarrollo de aplicaciones en Visual Basic, Mapbasic y Java Script para
+automatización de procesos con imágenes en procesos de compresión,
+generación de “vistas previas” (thumbnails), cambio de resolución para
+impresión y mejoramiento de la calidad y color con filtros.
+Georeferenciación automatizada de imágenes de los proyectos Misión CARTA
+2003 y CARTA 2005 (fotos analógicas (RC-.30) y digitales)
+Supervisión de los productos digitales y analógicos entregados a la Unidad
+Ejecutora del Plan de Regularización de Catastro y Registro Nacional.
+Educación
+  Page 11 of 12
+   
+Universidad de Costa Rica y Universidad Nacional
+Maestría, Sistemas de Información Geográfica y Teledetección · (2011 - 2013)
+Universidad de Costa Rica
+Licenciatura, Geografía · (1997 - 2001)
+Universidad de Costa Rica
+Bachillerato, Geografía · (1990 - 1996)
+  Page 12 of 12
