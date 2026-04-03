@@ -23,10 +23,10 @@
 
         <div id="login-form">
             <input type="email" id="email" placeholder="Correo electrónico" style="width:100%; padding:14px; margin-bottom:10px; border-radius:10px; border:1px solid rgba(255,255,255,.1); background:rgba(0,0,0,.2); color:white;"/>
-            <input type="password" id="pwd" placeholder="Contraseña" style="width:100%; padding:14px; margin-bottom:20px; border-radius:10px; border:1px solid rgba(255,255,255,.1); background:rgba(0,0,0,.2); color:white;"/>
+            <input type="password" id="pwd" placeholder="Contraseña o Rol" style="width:100%; padding:14px; margin-bottom:20px; border-radius:10px; border:1px solid rgba(255,255,255,.1); background:rgba(0,0,0,.2); color:white;"/>
             
             <button id="btn-login" class="btn primary" style="width:100%; padding:14px; font-size:16px;">Ingresar</button>
-            <p id="login-err" style="color:crimson; font-size:13px; margin-top:14px; display:none;">Credenciales inválidas.</p>
+            <p id="login-err" style="color:crimson; font-size:13px; margin-top:14px; display:none;">Credenciales inválidas o verificando servidor...</p>
         </div>
 
         <div id="admin-panel" style="display:none; text-align:left;">
@@ -34,19 +34,19 @@
             
             <div style="background:rgba(255,255,255,0.05); padding:15px; border-radius:10px; margin-bottom:20px;">
                 <p style="font-size:13px; margin-bottom:10px;"><strong style="color:white;">Instrucciones para editar:</strong><br/>
-                Para ocultar o reordenar tarjetas del catálogo, simplemente vuelve a la página que deseas de nuestra web principal. Verás habilitados los controles encima de cada elemento.</p>
+                Para ocultar o reordenar tarjetas del catálogo, simplemente vuelve a la página web principal y las verás resaltadas.</p>
                 <a href="index.html" class="btn primary" style="display:block; text-align:center;">Ir a Home / Editar sitio</a>
             </div>
 
             <div id="admin-only-section" style="display:none;">
-                <h3 style="font-size:16px; margin-bottom:10px;">Crear nuevo Editor</h3>
+                <h3 style="font-size:16px; margin-bottom:10px;">Añadir Editor al Ecosistema</h3>
                 <input type="email" id="new-email" placeholder="Nuevo correo" style="width:100%; padding:10px; margin-bottom:10px; border-radius:8px; border:1px solid rgba(255,255,255,.1); background:rgba(0,0,0,.2); color:white;"/>
-                <input type="text" id="new-pwd" placeholder="Contraseña temporal" style="width:100%; padding:10px; margin-bottom:10px; border-radius:8px; border:1px solid rgba(255,255,255,.1); background:rgba(0,0,0,.2); color:white;"/>
-                <button id="btn-add-editor" class="btn" style="width:100%;">Registrar Editor</button>
+                <input type="text" id="new-pwd" placeholder="Palabra Clave (ej: editor)" style="width:100%; padding:10px; margin-bottom:10px; border-radius:8px; border:1px solid rgba(255,255,255,.1); background:rgba(0,0,0,.2); color:white;"/>
+                <button id="btn-add-editor" class="btn" style="width:100%;">Registrar Editor Autónomo</button>
                 <p id="add-msg" style="font-size:12px; margin-top:10px;"></p>
                 
-                <h4 style="font-size:14px; margin-top:20px; margin-bottom:10px;">Editores actuales:</h4>
-                <ul id="editor-list" style="font-size:12px; color:var(--muted2); padding-left:14px;"></ul>
+                <h4 style="font-size:14px; margin-top:20px; margin-bottom:10px;">Base de Usuarios Global (Solo Lectura):</h4>
+                <ul id="editor-list" style="font-size:12px; color:var(--muted2); padding-left:14px;">Cargando...</ul>
             </div>
 
             <button id="btn-logout" class="btn" style="width:100%; margin-top:20px; border:1px solid rgba(255,255,255,0.1);">Cerrar Sesión</button>
@@ -69,38 +69,84 @@
               }
           }
 
-          document.getElementById('btn-login').onclick = () => {
-              const ok = loginUser(document.getElementById('email').value.trim(), document.getElementById('pwd').value);
-              if(ok) location.reload();
-              else document.getElementById('login-err').style.display = 'block';
+          document.getElementById('btn-login').onclick = async () => {
+              const btn = document.getElementById('btn-login');
+              btn.textContent = "Verificando...";
+              btn.disabled = true;
+              document.getElementById('login-err').style.display = 'none';
+              
+              try {
+                  const emailStr = document.getElementById('email').value.trim();
+                  const pwdStr = document.getElementById('pwd').value.trim();
+                  const ok = await loginUser(emailStr, pwdStr);
+                  if(ok) {
+                      location.reload();
+                  } else {
+                      document.getElementById('login-err').style.display = 'block';
+                  }
+              } catch(e) {
+                  console.error(e);
+                  document.getElementById('login-err').style.display = 'block';
+              } finally {
+                  btn.textContent = "Ingresar";
+                  btn.disabled = false;
+              }
           };
 
           document.getElementById('btn-logout').onclick = () => {
               logoutUser(); location.reload();
           };
 
-          document.getElementById('btn-add-editor').onclick = () => {
+          document.getElementById('btn-add-editor').onclick = async () => {
               const e = document.getElementById('new-email').value.trim();
-              const p = document.getElementById('new-pwd').value.trim();
-              if(e && p) {
-                  if(addEditor(e, p)) {
-                      document.getElementById('add-msg').style.color = '#4caf50';
-                      document.getElementById('add-msg').textContent = 'Se agregó el editor exitosamente.';
-                      renderEditors();
-                  } else {
+              const p = document.getElementById('new-pwd').value.trim() || 'editor';
+              if(e) {
+                  const btn = document.getElementById('btn-add-editor');
+                  btn.textContent = "Guardando Universalmente...";
+                  btn.disabled = true;
+                  try {
+                      if(await addEditor(e, p)) {
+                          document.getElementById('add-msg').style.color = '#4caf50';
+                          document.getElementById('add-msg').textContent = 'Se agregó el editor a la hoja madre de forma exitosa.';
+                          renderEditors();
+                      } else {
+                          document.getElementById('add-msg').style.color = 'crimson';
+                          document.getElementById('add-msg').textContent = 'El usuario ya existe.';
+                      }
+                  } catch(err) {
                       document.getElementById('add-msg').style.color = 'crimson';
-                      document.getElementById('add-msg').textContent = 'El usuario ya existe.';
+                      document.getElementById('add-msg').textContent = 'Ocurrió un error.';
+                  } finally {
+                      btn.textContent = "Registrar Editor Autónomo";
+                      btn.disabled = false;
+                      document.getElementById('new-email').value = '';
                   }
               }
           };
 
-          function renderEditors() {
+          async function renderEditors() {
               const ul = document.getElementById('editor-list');
+              ul.innerHTML = '<li>Sincronizando de Google Sheets...</li>';
+              const users = await getUsers();
               ul.innerHTML = '';
-              getUsers().forEach(u => {
-                  const li = document.createElement('li');
-                  li.textContent = u.email + ' (' + u.password + ')';
-                  ul.appendChild(li);
+              if(users.length === 0) {
+                 ul.innerHTML = '<li>Sin editores externos registrados o fallo de red.</li>';
+              } else {
+                 users.forEach(u => {
+                    const li = document.createElement('li');
+                    li.textContent = u.email + ' [Rol: ' + u.role + ']';
+                    ul.appendChild(li);
+                 });
+              }
+              
+              // Muestrar usuarios estáticos temporales (fallback)
+              const localU = getUsersDB().filter(u => u.role === 'editor');
+              localU.forEach(lu => {
+                  if(!users.find(u => u.email === lu.email)) {
+                       const li = document.createElement('li');
+                       li.textContent = lu.email + ' (Local Fallback Backup)';
+                       ul.appendChild(li);
+                  }
               });
           }
       });

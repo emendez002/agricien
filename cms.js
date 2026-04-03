@@ -1,24 +1,15 @@
-// Backend Engine usando Google Forms + Sheets como Base de Datos
+// Backend Engine usando Google Forms + Sheets como Base de Datos Serverless
 // La configuración de diseño es Global (Pública)
+// Los usuarios se consultan en el Sheet respectivo.
 
 const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/1_ZeKkYOt3FojkzphdqstRz8UcgvsV8XvmOKCnb3zRpU/export?format=csv';
 const FORM_POST_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSdR3WL2SCxmFL2fKIr-YSJvzjsZDrPD4WIUePw-xo8TcsiJTA/formResponse';
 const FORM_ENTRY_ID = 'entry.13807278';
 
-// Formulario de Roles enviado por el usuario
+const USERS_CSV_URL = 'https://docs.google.com/spreadsheets/d/1t3aJFZtFUl8EcgWi8brqCzgpLUjUfPpTLfRCjuK1g-w/export?format=csv';
 const USERS_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSeTI3wUNzx0bVHDgwe9MtfSstDY0LgBD1rUcKFvcesCteERAg/formResponse';
 const USERS_EMAIL_ENTRY = 'entry.137980382';
 const USERS_ROLE_ENTRY = 'entry.1166896746';
-
-// Solo el SuperAdmin Hardcoded para la semilla inicial. El resto se guarda local.
-const defaultUsers = [
-    { email: 'edgarmendezduran@gmail.com', password: 'admin', role: 'admin' },
-    // Eliminados los dummies para evitar conflictos.
-];
-
-if (!localStorage.getItem('agricienCMSUsers')) {
-    localStorage.setItem('agricienCMSUsers', JSON.stringify(defaultUsers));
-}
 
 // Para evitar parpadeos "Stale-while-Revalidate"
 function getLocalConfig() {
@@ -29,7 +20,7 @@ function setLocalConfig(cb) {
     localStorage.setItem('agricienCMSGlobal', JSON.stringify(cb));
 }
 
-// Parseador nativo de CSV para Sheets
+// Parseador nativo de CSV para Sheets configs
 function parseCSVLastJSON(csv) {
     if(!csv || !csv.includes(',')) return null;
     let records = csv.split('\n');
@@ -82,47 +73,85 @@ function submitToGoogleForms(url, data) {
     setTimeout(() => {
         form.remove();
         iframe.remove();
-    }, 3000);
+    }, 3500);
 }
 
-// Funciones de Usuario
-function getUsersDB() { return JSON.parse(localStorage.getItem('agricienCMSUsers')); }
+// ========== FUNCIONES DE USUARIO ASINCRONAS ==========
 function getSession() { 
     let s = localStorage.getItem('agricienSession');
     return s ? JSON.parse(s) : null; 
 }
-function loginUser(email, password) {
-    const users = getUsersDB();
-    const user = users.find(u => u.email === email && u.password === password);
-    if(user) {
-        localStorage.setItem('agricienSession', JSON.stringify({ email: user.email, role: user.role }));
+function logoutUser() { localStorage.removeItem('agricienSession'); }
+
+async function loginUser(email, password) {
+    // Admin maestro por seguridad de fallo de red
+    if(email === 'edgarmendezduran@gmail.com' && password === 'admin') {
+        localStorage.setItem('agricienSession', JSON.stringify({ email, role: 'admin' }));
         return true;
+    }
+    
+    try {
+        const res = await fetch(USERS_CSV_URL, { cache: "no-store" });
+        const csv = await res.text();
+        const records = csv.split('\n');
+        
+        // csv formato: Marca temporal,usuario,rol
+        for (let i = 1; i < records.length; i++) {
+            let cols = records[i].split(',');
+            if(cols.length >= 3) {
+                let uEmail = cols[1].trim();
+                let uRole = cols[2].trim().toLowerCase();
+                
+                if (uEmail === email) {
+                    // Contraseña por defecto ya que Google Forms no maneja auth segura (temporal proxy)
+                    if(password === uRole || password === 'admin' || password === 'editor') {
+                        localStorage.setItem('agricienSession', JSON.stringify({ email: uEmail, role: uRole }));
+                        return true;
+                    }
+                }
+            }
+        }
+    } catch(e) {
+        console.error("No se pudo validar el ecosistema de usuarios", e);
     }
     return false;
 }
-function logoutUser() { localStorage.removeItem('agricienSession'); }
 
-function addEditor(email, password) {
+async function addEditor(email, password) {
     const session = getSession();
     if(session?.role !== 'admin') return false;
-    const users = getUsersDB();
+    
+    // Verificamos si existe antes de subirlo
+    const users = await getUsers();
     if(!users.find(u => u.email === email)) {
-        // Guarda localmente
-        users.push({ email, password, role: 'editor' });
-        localStorage.setItem('agricienCMSUsers', JSON.stringify(users));
-        
-        // ENVIA REGISTRO A FORMULARIO GOOGLE DE ROLES (Backlog / Auditoría)
         let formData = {};
         formData[USERS_EMAIL_ENTRY] = email;
         formData[USERS_ROLE_ENTRY] = 'editor';
         submitToGoogleForms(USERS_FORM_URL, formData);
-        
         return true;
     }
     return false;
 }
-function getUsers() { return getUsersDB().filter(u => u.role === 'editor'); }
 
+async function getUsers() {
+    let users = [];
+    try {
+        const res = await fetch(USERS_CSV_URL, { cache: "no-store" });
+        const csv = await res.text();
+        const records = csv.split('\n');
+        for (let i = 1; i < records.length; i++) {
+            let cols = records[i].split(',');
+            if(cols.length >= 3) {
+                let uEmail = cols[1].trim();
+                let uRole = cols[2].trim();
+                if(uEmail) users.push({ email: uEmail, role: uRole });
+            }
+        }
+    } catch(e) {}
+    return users;
+}
+
+// ========== MOTOR CMS ==========
 let globalCMSDb = getLocalConfig();
 
 function sendUpdateToGoogle(newPagesConfig) {
@@ -131,7 +160,6 @@ function sendUpdateToGoogle(newPagesConfig) {
     submitToGoogleForms(FORM_POST_URL, fields);
 }
 
-// Lógica de CMS / UI
 function initCMS() {
     const session = getSession();
     const isEditing = session !== null;
@@ -158,20 +186,19 @@ function initCMS() {
     
     const grid = grids[0];
     
-    // Obtener la data Remota si no somos editores directos (garantizar verdad absoluta)
     fetch(SHEET_CSV_URL, { cache: "no-store" })
       .then(r => r.text())
       .then(csvText => {
           const remoteJson = parseCSVLastJSON(csvText);
           if(remoteJson && remoteJson.pages) {
-              globalCMSDb = remoteJson; // Tomar remoto como base global
+              globalCMSDb = remoteJson;
               setLocalConfig(globalCMSDb); 
               applyCMSConfig(globalCMSDb, grid, pageId, isEditing);
           } else {
               applyCMSConfig(globalCMSDb, grid, pageId, isEditing);
           }
       }).catch(err => {
-          console.warn("Usando estado local por fallo de red", err);
+          console.warn("Fallo revalidación de Google Forms", err);
           applyCMSConfig(globalCMSDb, grid, pageId, isEditing);
       });
       
