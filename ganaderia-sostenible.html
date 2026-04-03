@@ -187,6 +187,10 @@
 
 					<span id="formMsg" style="color:var(--muted2); font-size:12.5px;"></span>
 				  </div>
+				
+                  <input type="hidden" id="origen_pagina" name="origen_pagina" value="">
+                  <input type="hidden" id="origen_elemento" name="origen_elemento" value="">
+       
 				</form>
 
 				<iframe name="hidden_iframe" style="display:none;"></iframe>
@@ -298,6 +302,31 @@
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   // Google Form submit handler
+  
+  // Lógica de trazabilidad
+  document.addEventListener("DOMContentLoaded", () => {
+    const inputPagina = document.getElementById("origen_pagina");
+    const inputElemento = document.getElementById("origen_elemento");
+    
+    if (inputPagina && inputElemento) {
+      document.querySelectorAll('a[href*="#contacto"], a[href*="#diagnostico"]').forEach(link => {
+        link.addEventListener('click', (e) => {
+          let card = link.closest('.card, .panelInner, .ctaGrid');
+          let elementName = '';
+          if (card) {
+            let hTag = card.querySelector('h3, h2, h1');
+            if (hTag) elementName = hTag.innerText.trim();
+          }
+          
+          let pathName = window.location.pathname.split('/').pop().replace('.html', '') || 'index';
+          
+          inputPagina.value = pathName;
+          inputElemento.value = elementName;
+        });
+      });
+    }
+  });
+
   function googleFormSubmit(e){
     const msg = document.getElementById("formMsg");
     const btn = document.getElementById("submitBtn");
