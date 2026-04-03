@@ -1,6 +1,6 @@
 // Backend Engine usando Google Forms + Sheets como Base de Datos Serverless
 // La configuración de diseño es Global (Pública)
-// Los usuarios se consultan en el Sheet respectivo.
+// Los usuarios se consultan en el Sheet respectivo y en LocalStorage auxiliar.
 
 const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/1_ZeKkYOt3FojkzphdqstRz8UcgvsV8XvmOKCnb3zRpU/export?format=csv';
 const FORM_POST_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSdR3WL2SCxmFL2fKIr-YSJvzjsZDrPD4WIUePw-xo8TcsiJTA/formResponse';
@@ -83,37 +83,61 @@ function getSession() {
 }
 function logoutUser() { localStorage.removeItem('agricienSession'); }
 
+// Fallback de usuarios creados recientemente que aún no han bajado desde el Sheet de Google
+function getLocalUsersDB() {
+    let raw = localStorage.getItem('agricienCMSUsersLocalDB');
+    return raw ? JSON.parse(raw) : [];
+}
+
 async function loginUser(email, password) {
+    email = email.trim();
+    password = password.trim();
+    
     // Admin maestro por seguridad de fallo de red
     if(email === 'edgarmendezduran@gmail.com' && password === 'admin') {
         localStorage.setItem('agricienSession', JSON.stringify({ email, role: 'admin' }));
         return true;
     }
     
-    try {
-        const res = await fetch(USERS_CSV_URL, { cache: "no-store" });
-        const csv = await res.text();
-        const records = csv.split('\n');
-        
-        // csv formato: Marca temporal,usuario,rol
-        for (let i = 1; i < records.length; i++) {
-            let cols = records[i].split(',');
-            if(cols.length >= 3) {
-                let uEmail = cols[1].trim();
-                let uRole = cols[2].trim().toLowerCase();
-                
-                if (uEmail === email) {
-                    // Contraseña por defecto ya que Google Forms no maneja auth segura (temporal proxy)
-                    if(password === uRole || password === 'admin' || password === 'editor') {
-                        localStorage.setItem('agricienSession', JSON.stringify({ email: uEmail, role: uRole }));
-                        return true;
+    // Auth: intentar en Google y Local
+    let foundRole = null;
+    
+    const localUsers = getLocalUsersDB();
+    const lUser = localUsers.find(u => u.email === email);
+    if (lUser) {
+        foundRole = lUser.role;
+    }
+    
+    if (!foundRole) {
+        try {
+            const res = await fetch(USERS_CSV_URL, { cache: "no-store" });
+            const csv = await res.text();
+            const records = csv.split('\n');
+            
+            // csv formato: Marca temporal,usuario,rol
+            for (let i = 1; i < records.length; i++) {
+                let cols = records[i].split(',');
+                if(cols.length >= 3) {
+                    let uEmail = cols[1].trim();
+                    let uRole = cols[2].trim().toLowerCase();
+                    if (uEmail === email) {
+                        foundRole = uRole; break;
                     }
                 }
             }
+        } catch(e) {
+            console.error("No se pudo validar desde Google, fall back temporal", e);
         }
-    } catch(e) {
-        console.error("No se pudo validar el ecosistema de usuarios", e);
     }
+    
+    if (foundRole) {
+        // Contraseña por defecto basada en el rol (temporal al no tener contraseñas seguras en el Sheet)
+        if(password === foundRole || password === 'editor' || password === 'admin') {
+            localStorage.setItem('agricienSession', JSON.stringify({ email: email, role: foundRole }));
+            return true;
+        }
+    }
+
     return false;
 }
 
@@ -124,10 +148,18 @@ async function addEditor(email, password) {
     // Verificamos si existe antes de subirlo
     const users = await getUsers();
     if(!users.find(u => u.email === email)) {
+        
+        // Guardado local de emergencia (asegurando el login)
+        const localDB = getLocalUsersDB();
+        localDB.push({ email: email, role: 'editor' });
+        localStorage.setItem('agricienCMSUsersLocalDB', JSON.stringify(localDB));
+        
+        // Envío asíncrono robusto
         let formData = {};
         formData[USERS_EMAIL_ENTRY] = email;
         formData[USERS_ROLE_ENTRY] = 'editor';
         submitToGoogleForms(USERS_FORM_URL, formData);
+        
         return true;
     }
     return false;
@@ -144,10 +176,17 @@ async function getUsers() {
             if(cols.length >= 3) {
                 let uEmail = cols[1].trim();
                 let uRole = cols[2].trim();
-                if(uEmail) users.push({ email: uEmail, role: uRole });
+                if(uEmail && uEmail !== "usuario") users.push({ email: uEmail, role: uRole });
             }
         }
     } catch(e) {}
+    
+    // Mezclar locales
+    const localDB = getLocalUsersDB();
+    localDB.forEach(l => {
+        if(!users.find(u => u.email === l.email)) users.push(l);
+    });
+    
     return users;
 }
 
