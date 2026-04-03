@@ -44,7 +44,7 @@
         <div class="actions">
           <button class="btn menuBtn" id="menuBtn" type="button" aria-expanded="false" aria-controls="drawer">Menú</button>
           <a class="btn" href="#contacto">Hablar con un experto</a>
-          <a class="btn primary" href="#diagnostico">Solicitar diagnóstico</a>
+          <a class="btn primary" href="index.html#diagnostico">Solicitar diagnóstico</a>
         </div>
       </div>
 
@@ -134,7 +134,7 @@
         <div class="big">
           <article class="card">
             <h3>Escribinos</h3>
-            <p style="margin-bottom:12px;">Este formulario es un ejemplo (sin backend). Podés conectarlo a tu email, CRM o WhatsApp.</p>
+            <p style="margin-bottom:12px;">Por favor completá los detalles a continuación. Te solicitaremos información básica de contacto, la ubicación del proyecto y la principal necesidad que buscas resolver.</p>
 
 				<form
 				  action="https://docs.google.com/forms/d/e/1FAIpQLSfyk1_i-51w3N0Yj7EGONRdKiFXKCDTkodK-hi1vqbGCueaGw/formResponse"
@@ -257,7 +257,7 @@
 
           <div class="footLinks" aria-label="Enlaces">
             <a href="#diferencia">Diferencia</a>
-            <a href="#capacidad">Capacidades</a>
+            <a href="index.html#servicios">Servicios</a>
             <a href="#innovacion">Innovación</a>
             <a href="#contacto">Contacto</a>
           </div>
@@ -299,7 +299,7 @@
     const inputElemento = document.getElementById("origen_elemento");
     
     if (inputPagina && inputElemento) {
-      document.querySelectorAll('a[href*="#contacto"], a[href*="#diagnostico"]').forEach(link => {
+      document.querySelectorAll('a[href*="#contacto"], a[href*="index.html#diagnostico"]').forEach(link => {
         link.addEventListener('click', (e) => {
           let card = link.closest('.card, .panelInner, .ctaGrid');
           let elementName = '';
