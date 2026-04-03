@@ -1,15 +1,19 @@
 // Backend Engine usando Google Forms + Sheets como Base de Datos
 // La configuración de diseño es Global (Pública)
-// Los usuarios (Editores) se mantienen en LocalStorage por seguridad.
 
 const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/1_ZeKkYOt3FojkzphdqstRz8UcgvsV8XvmOKCnb3zRpU/export?format=csv';
 const FORM_POST_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSdR3WL2SCxmFL2fKIr-YSJvzjsZDrPD4WIUePw-xo8TcsiJTA/formResponse';
 const FORM_ENTRY_ID = 'entry.13807278';
 
+// Formulario de Roles enviado por el usuario
+const USERS_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSeTI3wUNzx0bVHDgwe9MtfSstDY0LgBD1rUcKFvcesCteERAg/formResponse';
+const USERS_EMAIL_ENTRY = 'entry.137980382';
+const USERS_ROLE_ENTRY = 'entry.1166896746';
+
+// Solo el SuperAdmin Hardcoded para la semilla inicial. El resto se guarda local.
 const defaultUsers = [
     { email: 'edgarmendezduran@gmail.com', password: 'admin', role: 'admin' },
-    { email: 'aguero.jose@gmail.com', password: 'editor', role: 'editor' },
-    { email: 'edgar@geociencias.net', password: 'admin', role: 'editor' }
+    // Eliminados los dummies para evitar conflictos.
 ];
 
 if (!localStorage.getItem('agricienCMSUsers')) {
@@ -25,7 +29,7 @@ function setLocalConfig(cb) {
     localStorage.setItem('agricienCMSGlobal', JSON.stringify(cb));
 }
 
-// Parseador nativo de CSV para Sheets (extraer última fila de JSON)
+// Parseador nativo de CSV para Sheets
 function parseCSVLastJSON(csv) {
     if(!csv || !csv.includes(',')) return null;
     let records = csv.split('\n');
@@ -33,7 +37,6 @@ function parseCSVLastJSON(csv) {
     if (lastRow === '') lastRow = records[records.length - 2]?.trim();
     if (!lastRow) return null;
     
-    // Busca donde empieza el JSON
     let jsonStart = lastRow.indexOf(',"');
     if (jsonStart === -1) {
         jsonStart = lastRow.indexOf(',{');
@@ -52,6 +55,36 @@ function parseCSVLastJSON(csv) {
     }
 }
 
+// Envío a Google Forms hiper robusto (Iframe anti-CORS y anti-Bloqueadores)
+function submitToGoogleForms(url, data) {
+    const iframeId = 'gform_' + Math.floor(Math.random()*10000);
+    const iframe = document.createElement('iframe');
+    iframe.name = iframeId;
+    iframe.style.display = 'none';
+    document.body.appendChild(iframe);
+    
+    const form = document.createElement('form');
+    form.method = 'POST';
+    form.action = url;
+    form.target = iframeId;
+    
+    for (let key in data) {
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = key;
+        input.value = data[key];
+        form.appendChild(input);
+    }
+    
+    document.body.appendChild(form);
+    form.submit();
+    
+    setTimeout(() => {
+        form.remove();
+        iframe.remove();
+    }, 3000);
+}
+
 // Funciones de Usuario
 function getUsersDB() { return JSON.parse(localStorage.getItem('agricienCMSUsers')); }
 function getSession() { 
@@ -68,31 +101,34 @@ function loginUser(email, password) {
     return false;
 }
 function logoutUser() { localStorage.removeItem('agricienSession'); }
+
 function addEditor(email, password) {
     const session = getSession();
     if(session?.role !== 'admin') return false;
     const users = getUsersDB();
     if(!users.find(u => u.email === email)) {
+        // Guarda localmente
         users.push({ email, password, role: 'editor' });
         localStorage.setItem('agricienCMSUsers', JSON.stringify(users));
+        
+        // ENVIA REGISTRO A FORMULARIO GOOGLE DE ROLES (Backlog / Auditoría)
+        let formData = {};
+        formData[USERS_EMAIL_ENTRY] = email;
+        formData[USERS_ROLE_ENTRY] = 'editor';
+        submitToGoogleForms(USERS_FORM_URL, formData);
+        
         return true;
     }
     return false;
 }
 function getUsers() { return getUsersDB().filter(u => u.role === 'editor'); }
 
-let globalCMSDb = getLocalConfig(); // Estado en memoria (Rápido)
+let globalCMSDb = getLocalConfig();
 
 function sendUpdateToGoogle(newPagesConfig) {
-    const formData = new URLSearchParams();
-    formData.append(FORM_ENTRY_ID, JSON.stringify(newPagesConfig));
-    
-    fetch(FORM_POST_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: formData.toString()
-    }).catch(e => console.error("Error guardando en Google Forms:", e));
+    let fields = {};
+    fields[FORM_ENTRY_ID] = JSON.stringify(newPagesConfig);
+    submitToGoogleForms(FORM_POST_URL, fields);
 }
 
 // Lógica de CMS / UI
@@ -101,7 +137,6 @@ function initCMS() {
     const isEditing = session !== null;
     const pageId = window.location.pathname.split('/').pop().replace('.html', '') || 'index';
 
-    // Manejar Navbars de estado
     const loginLinks = document.querySelectorAll('.cms-login-link');
     if (isEditing) {
         loginLinks.forEach(l => {
@@ -123,33 +158,30 @@ function initCMS() {
     
     const grid = grids[0];
     
-    // Obtener la data Remota si no somos editores directos (para garantizar la verdad absoluta)
+    // Obtener la data Remota si no somos editores directos (garantizar verdad absoluta)
     fetch(SHEET_CSV_URL, { cache: "no-store" })
       .then(r => r.text())
       .then(csvText => {
           const remoteJson = parseCSVLastJSON(csvText);
           if(remoteJson && remoteJson.pages) {
-              globalCMSDb = remoteJson; // Tomar remoto como la verdad absoluta
-              setLocalConfig(globalCMSDb); // Caché local para siguiente reload
+              globalCMSDb = remoteJson; // Tomar remoto como base global
+              setLocalConfig(globalCMSDb); 
               applyCMSConfig(globalCMSDb, grid, pageId, isEditing);
           } else {
               applyCMSConfig(globalCMSDb, grid, pageId, isEditing);
           }
       }).catch(err => {
-          console.warn("No se pudo cargar la DB Remota de Google. Usando estado local.", err);
+          console.warn("Usando estado local por fallo de red", err);
           applyCMSConfig(globalCMSDb, grid, pageId, isEditing);
       });
       
-    // Por ser SPA/státicos, aplicamos *inmediatamente* la caché local para no causar "saltos" en la pantalla
     applyCMSConfig(globalCMSDb, grid, pageId, isEditing);
 }
 
 function applyCMSConfig(db, grid, pageId, isEditing) {
     const pageConfig = db.pages[pageId] || { order: [], hidden: [] };
-    
     let cards = Array.from(grid.querySelectorAll('article.card'));
     
-    // Garantizar que todos tengan IDs sólidos
     cards.forEach((c, idx) => {
         if (!c.id) {
             let title = c.querySelector('h2, h3, h4');
@@ -161,7 +193,6 @@ function applyCMSConfig(db, grid, pageId, isEditing) {
         }
     });
 
-    // 1. REORDENAR Y OCULTAR DOM (MÁSCARA)
     if (pageConfig.order && pageConfig.order.length > 0) {
         pageConfig.order.forEach(id => {
             const el = document.getElementById(id);
@@ -170,14 +201,12 @@ function applyCMSConfig(db, grid, pageId, isEditing) {
     }
 
     cards.forEach(c => {
-        // Limpiamos residuales
         c.style.display = '';
         const existingCtrl = c.querySelector('.cms-controls');
         if(existingCtrl) existingCtrl.remove();
         c.classList.remove('cms-edit-wrap', 'hidden-card');
         c.draggable = false;
         
-        // Anti-ghosting event listeners
         const clone = c.cloneNode(true);
         c.replaceWith(clone);
     });
@@ -185,14 +214,12 @@ function applyCMSConfig(db, grid, pageId, isEditing) {
     cards = Array.from(grid.querySelectorAll('article.card'));
 
     if (!isEditing) {
-        // MODO ANÓNIMO
         cards.forEach(c => {
             if(pageConfig.hidden && pageConfig.hidden.includes(c.id)) {
                 c.style.display = 'none';
             }
         });
     } else {
-        // MODO EDITOR
         if(!document.getElementById('cms-styles')) {
             const style = document.createElement('style');
             style.id = 'cms-styles';
@@ -238,7 +265,6 @@ function applyCMSConfig(db, grid, pageId, isEditing) {
             ctrl.appendChild(toggle);
             c.insertBefore(ctrl, c.firstChild);
 
-            // Drag
             c.addEventListener('dragstart', (e) => {
                 c.classList.add('dragging');
                 if(e.dataTransfer) e.dataTransfer.setData('text/plain', c.id);
@@ -285,17 +311,13 @@ function applyCMSConfig(db, grid, pageId, isEditing) {
             if(!globalCMSDb.pages) globalCMSDb.pages = {};
             globalCMSDb.pages[pageId] = { order: currentOrder, hidden: currentHidden };
             
-            // 1. Instantly feedback in the client cache
             setLocalConfig(globalCMSDb);
-            
-            // 2. Publish to Google Database (Global)
             sendUpdateToGoogle(globalCMSDb);
             
         }, 50);
     }
 }
 
-// BFCache Protection
 window.addEventListener('pageshow', (e) => {
     initCMS();
 });
