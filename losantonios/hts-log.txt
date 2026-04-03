@@ -1,0 +1,185 @@
+HTTrack3.49-2+htsswf+htsjava launched on Fri, 03 Apr 2026 14:59:24 at https://losantonios.com/es/ +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "en, *" https://losantonios.com/es/ -O1 "F:\antonios\losantonios" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+14:59:56	Error: 	"Error when decompressing" (-1) at link https://losantonios.com/es/tolvas (from https://losantonios.com/es/)
+14:59:56	Error: 	"Error when decompressing" (-1) at link https://losantonios.com/es/plantadoras (from https://losantonios.com/es/)
+14:59:56	Error: 	"Error when decompressing" (-1) at link https://losantonios.com/es/otros (from https://losantonios.com/es/)
+15:00:00	Error: 	"Error when decompressing" (-1) at link https://losantonios.com/es/subsoladores (from https://losantonios.com/es/maquinaria/)
+15:00:00	Error: 	"Error when decompressing" (-1) at link https://losantonios.com/es/preparadores (from https://losantonios.com/es/maquinaria/)
+15:00:05	Warning: 	Retry after error -4 (No data (connection closed)) at link https://losantonios.com/es/traillas/traillas-de-volteo-vinas-y-arbolado/ (from https://losantonios.com/es/traillas/)
+15:00:31	Error: 	"Not Found" (404) at link https://losantonios.com/wp-content/uploads/2021/06/PLA-VIÑAS-N.png (from https://losantonios.com/es/plantadoras/)
+15:00:32	Warning: 	Moved Permanently for https://losantonios.com/es/es/otros/acaballonador/acaballonador-aca800/
+15:00:32	Warning: 	File has moved from https://losantonios.com/es/es/otros/acaballonador/acaballonador-aca800/ to https://losantonios.com/es/otros/acaballonador/acaballonador-aca800/
+15:00:32	Warning: 	Moved Permanently for https://losantonios.com/es/es/otros/alomador/alomador-alo7/
+15:00:32	Warning: 	File has moved from https://losantonios.com/es/es/otros/alomador/alomador-alo7/ to https://losantonios.com/es/otros/alomador/alomador-alo7/
+15:00:32	Warning: 	Moved Permanently for https://losantonios.com/es/es/traillas/traillas-hidraulicas-de-empuje/th66/
+15:00:32	Warning: 	File has moved from https://losantonios.com/es/es/traillas/traillas-hidraulicas-de-empuje/th66/ to https://losantonios.com/es/traillas/traillas-hidraulicas-de-empuje/th66/
+15:00:39	Error: 	"Not Found" (404) at link https://losantonios.com/wp-content/themes/losantonios/css/owl.video.play.png (from https://losantonios.com/wp-content/themes/losantonios/css/owl.carousel.min.css)
+15:00:39	Warning: 	Moved Permanently for https://losantonios.com/es/es/traillas/traillas-hidraulicas-de-empuje/th23/
+15:00:39	Warning: 	File has moved from https://losantonios.com/es/es/traillas/traillas-hidraulicas-de-empuje/th23/ to https://losantonios.com/es/traillas/traillas-hidraulicas-de-empuje/th23/
+15:00:39	Warning: 	Moved Permanently for https://losantonios.com/es/es/traillas/traillas-hidraulicas-de-empuje/th25/
+15:00:39	Warning: 	File has moved from https://losantonios.com/es/es/traillas/traillas-hidraulicas-de-empuje/th25/ to https://losantonios.com/es/traillas/traillas-hidraulicas-de-empuje/th25/
+15:00:40	Warning: 	Moved Permanently for https://losantonios.com/es/es/traillas/traillas-hidraulicas-de-empuje/th30/
+15:00:40	Warning: 	File has moved from https://losantonios.com/es/es/traillas/traillas-hidraulicas-de-empuje/th30/ to https://losantonios.com/es/traillas/traillas-hidraulicas-de-empuje/th30/
+15:00:40	Warning: 	Moved Permanently for https://losantonios.com/es/es/traillas/traillas-hidraulicas-de-empuje/th35/
+15:00:40	Warning: 	File has moved from https://losantonios.com/es/es/traillas/traillas-hidraulicas-de-empuje/th35/ to https://losantonios.com/es/traillas/traillas-hidraulicas-de-empuje/th35/
+15:00:41	Warning: 	Moved Permanently for https://losantonios.com/es/es/traillas/traillas-hidraulicas-de-empuje/th38/
+15:00:41	Warning: 	File has moved from https://losantonios.com/es/es/traillas/traillas-hidraulicas-de-empuje/th38/ to https://losantonios.com/es/traillas/traillas-hidraulicas-de-empuje/th38/
+15:00:41	Warning: 	Moved Permanently for https://losantonios.com/es/es/traillas/traillas-hidraulicas-de-empuje/th39/
+15:00:41	Warning: 	File has moved from https://losantonios.com/es/es/traillas/traillas-hidraulicas-de-empuje/th39/ to https://losantonios.com/es/traillas/traillas-hidraulicas-de-empuje/th39/
+15:00:42	Warning: 	Moved Permanently for https://losantonios.com/es/es/traillas/traillas-hidraulicas-de-empuje/th42-bp/
+15:00:42	Warning: 	File has moved from https://losantonios.com/es/es/traillas/traillas-hidraulicas-de-empuje/th42-bp/ to https://losantonios.com/es/traillas/traillas-hidraulicas-de-empuje/th42-bp/
+15:00:43	Warning: 	Moved Permanently for https://losantonios.com/es/es/traillas/traillas-hidraulicas-de-empuje/th48-bp/
+15:00:43	Warning: 	File has moved from https://losantonios.com/es/es/traillas/traillas-hidraulicas-de-empuje/th48-bp/ to https://losantonios.com/es/traillas/traillas-hidraulicas-de-empuje/th48-bp/
+15:00:43	Warning: 	Moved Permanently for https://losantonios.com/es/es/traillas/traillas-hidraulicas-de-empuje/th51-bp/
+15:00:43	Warning: 	File has moved from https://losantonios.com/es/es/traillas/traillas-hidraulicas-de-empuje/th51-bp/ to https://losantonios.com/es/traillas/traillas-hidraulicas-de-empuje/th51-bp/
+15:00:43	Warning: 	Moved Permanently for https://losantonios.com/es/es/traillas/traillas-hidraulicas-de-empuje/th51-di/
+15:00:43	Warning: 	File has moved from https://losantonios.com/es/es/traillas/traillas-hidraulicas-de-empuje/th51-di/ to https://losantonios.com/es/traillas/traillas-hidraulicas-de-empuje/th51-di/
+15:00:44	Warning: 	Moved Permanently for https://losantonios.com/es/es/traillas/traillas-hidraulicas-de-empuje/th61-bp/
+15:00:44	Warning: 	File has moved from https://losantonios.com/es/es/traillas/traillas-hidraulicas-de-empuje/th61-bp/ to https://losantonios.com/es/traillas/traillas-hidraulicas-de-empuje/th61-bp/
+15:00:46	Warning: 	Moved Permanently for https://losantonios.com/es/es/traillas/traillas-hidraulicas-de-empuje/th63-bp/
+15:00:46	Warning: 	File has moved from https://losantonios.com/es/es/traillas/traillas-hidraulicas-de-empuje/th63-bp/ to https://losantonios.com/es/traillas/traillas-hidraulicas-de-empuje/th63-bp/
+15:00:47	Warning: 	Moved Permanently for https://losantonios.com/es/es/refinadoras/refinadoras-cuello-cisne/1200cc-1400cc/
+15:00:47	Warning: 	File has moved from https://losantonios.com/es/es/refinadoras/refinadoras-cuello-cisne/1200cc-1400cc/ to https://losantonios.com/es/refinadoras/refinadoras-cuello-cisne/1200cc-1400cc/
+15:00:47	Warning: 	Moved Permanently for https://losantonios.com/es/es/refinadoras/refinadoras-cuello-cisne/1800cc/
+15:00:47	Warning: 	File has moved from https://losantonios.com/es/es/refinadoras/refinadoras-cuello-cisne/1800cc/ to https://losantonios.com/es/refinadoras/refinadoras-cuello-cisne/1800cc/
+15:00:47	Warning: 	Moved Permanently for https://losantonios.com/es/es/refinadoras/refinadoras-cuello-cisne/2000cc/
+15:00:47	Warning: 	File has moved from https://losantonios.com/es/es/refinadoras/refinadoras-cuello-cisne/2000cc/ to https://losantonios.com/es/refinadoras/refinadoras-cuello-cisne/2000cc/
+15:00:49	Warning: 	Moved Permanently for https://losantonios.com/es/es/refinadoras/refinadoras-cuello-cisne/2500cc-2750cc-3000cc/
+15:00:49	Warning: 	File has moved from https://losantonios.com/es/es/refinadoras/refinadoras-cuello-cisne/2500cc-2750cc-3000cc/ to https://losantonios.com/es/refinadoras/refinadoras-cuello-cisne/2500cc-2750cc-3000cc/
+15:00:51	Warning: 	Moved Permanently for https://losantonios.com/es/es/refinadoras/refinadoras-cuello-cisne/4000cc-4500cc-5000cc-6000cc/
+15:00:51	Warning: 	File has moved from https://losantonios.com/es/es/refinadoras/refinadoras-cuello-cisne/4000cc-4500cc-5000cc-6000cc/ to https://losantonios.com/es/refinadoras/refinadoras-cuello-cisne/4000cc-4500cc-5000cc-6000cc/
+15:00:51	Warning: 	Moved Permanently for https://losantonios.com/es/es/refinadoras/refinadoras-cuello-cisne/5000ccg/
+15:00:51	Warning: 	File has moved from https://losantonios.com/es/es/refinadoras/refinadoras-cuello-cisne/5000ccg/ to https://losantonios.com/es/refinadoras/refinadoras-cuello-cisne/5000ccg/
+15:00:52	Warning: 	Moved Permanently for https://losantonios.com/es/es/refinadoras/refinadoras-cuello-cisne/6cc-v/
+15:00:52	Warning: 	File has moved from https://losantonios.com/es/es/refinadoras/refinadoras-cuello-cisne/6cc-v/ to https://losantonios.com/es/refinadoras/refinadoras-cuello-cisne/6cc-v/
+15:00:52	Warning: 	Moved Permanently for https://losantonios.com/es/es/refinadoras/refinadoras-cuello-cisne/6ccg-v-ex-7ccg-v-ex/
+15:00:52	Warning: 	File has moved from https://losantonios.com/es/es/refinadoras/refinadoras-cuello-cisne/6ccg-v-ex-7ccg-v-ex/ to https://losantonios.com/es/refinadoras/refinadoras-cuello-cisne/6ccg-v-ex-7ccg-v-ex/
+15:00:52	Warning: 	Moved Permanently for https://losantonios.com/es/es/refinadoras/refinadoras-cuello-cisne/v5000ccm-v6000ccm-v7000ccm/
+15:00:52	Warning: 	File has moved from https://losantonios.com/es/es/refinadoras/refinadoras-cuello-cisne/v5000ccm-v6000ccm-v7000ccm/ to https://losantonios.com/es/refinadoras/refinadoras-cuello-cisne/v5000ccm-v6000ccm-v7000ccm/
+15:00:53	Warning: 	Moved Permanently for https://losantonios.com/es/es/refinadoras/refinadoras-cuello-cisne/v6000ccg-7000ccg/
+15:00:53	Warning: 	File has moved from https://losantonios.com/es/es/refinadoras/refinadoras-cuello-cisne/v6000ccg-7000ccg/ to https://losantonios.com/es/refinadoras/refinadoras-cuello-cisne/v6000ccg-7000ccg/
+15:00:54	Warning: 	Moved Permanently for https://losantonios.com/es/es/refinadoras/refinadoras-laser-fija-cuello-cisne/lanza-rfl/
+15:00:54	Warning: 	File has moved from https://losantonios.com/es/es/refinadoras/refinadoras-laser-fija-cuello-cisne/lanza-rfl/ to https://losantonios.com/es/refinadoras/refinadoras-laser-fija-cuello-cisne/lanza-rfl/
+15:00:54	Warning: 	Moved Permanently for https://losantonios.com/es/es/refinadoras/refinadoras-laser-fija-cuello-cisne/refinadora-fija-lanza-rfl-elv/
+15:00:54	Warning: 	File has moved from https://losantonios.com/es/es/refinadoras/refinadoras-laser-fija-cuello-cisne/refinadora-fija-lanza-rfl-elv/ to https://losantonios.com/es/refinadoras/refinadoras-laser-fija-cuello-cisne/refinadora-fija-lanza-rfl-elv/
+15:00:54	Warning: 	Moved Permanently for https://losantonios.com/es/es/refinadoras/refinadoras-laser-fija-cuello-cisne/ccf-ccgf/
+15:00:54	Warning: 	File has moved from https://losantonios.com/es/es/refinadoras/refinadoras-laser-fija-cuello-cisne/ccf-ccgf/ to https://losantonios.com/es/refinadoras/refinadoras-laser-fija-cuello-cisne/ccf-ccgf/
+15:00:55	Warning: 	Moved Permanently for https://losantonios.com/es/es/refinadoras/refinadoras-laser-cuello-cisne-doble-control/1200cc-dc-1400cc-dc/
+15:00:55	Warning: 	File has moved from https://losantonios.com/es/es/refinadoras/refinadoras-laser-cuello-cisne-doble-control/1200cc-dc-1400cc-dc/ to https://losantonios.com/es/refinadoras/refinadoras-laser-cuello-cisne-doble-control/1200cc-dc-1400cc-dc/
+15:00:56	Warning: 	Moved Permanently for https://losantonios.com/es/es/refinadoras/refinadoras-laser-cuello-cisne-doble-control/1800cc-dc/
+15:00:56	Warning: 	File has moved from https://losantonios.com/es/es/refinadoras/refinadoras-laser-cuello-cisne-doble-control/1800cc-dc/ to https://losantonios.com/es/refinadoras/refinadoras-laser-cuello-cisne-doble-control/1800cc-dc/
+15:00:56	Warning: 	Moved Permanently for https://losantonios.com/es/es/refinadoras/refinadoras-laser-cuello-cisne-doble-control/2000cc-dc/
+15:00:56	Warning: 	File has moved from https://losantonios.com/es/es/refinadoras/refinadoras-laser-cuello-cisne-doble-control/2000cc-dc/ to https://losantonios.com/es/refinadoras/refinadoras-laser-cuello-cisne-doble-control/2000cc-dc/
+15:00:57	Warning: 	Moved Permanently for https://losantonios.com/es/es/refinadoras/refinadoras-laser-cuello-cisne-doble-control/2500cc-dc-2750cc-dc-3000cc-dc/
+15:00:57	Warning: 	File has moved from https://losantonios.com/es/es/refinadoras/refinadoras-laser-cuello-cisne-doble-control/2500cc-dc-2750cc-dc-3000cc-dc/ to https://losantonios.com/es/refinadoras/refinadoras-laser-cuello-cisne-doble-control/2500cc-dc-2750cc-dc-3000cc-dc/
+15:00:59	Warning: 	Moved Permanently for https://losantonios.com/es/es/refinadoras/refinadoras-laser-cuello-cisne-doble-control/4000cc-dc-45050cc-dc-5000cc-dc-6000cc-dc/
+15:00:59	Warning: 	File has moved from https://losantonios.com/es/es/refinadoras/refinadoras-laser-cuello-cisne-doble-control/4000cc-dc-45050cc-dc-5000cc-dc-6000cc-dc/ to https://losantonios.com/es/refinadoras/refinadoras-laser-cuello-cisne-doble-control/4000cc-dc-45050cc-dc-5000cc-dc-6000cc-dc/
+15:00:59	Warning: 	Moved Permanently for https://losantonios.com/es/es/refinadoras/refinadoras-laser-cuello-cisne-doble-control/5000ccg-dc/
+15:00:59	Warning: 	File has moved from https://losantonios.com/es/es/refinadoras/refinadoras-laser-cuello-cisne-doble-control/5000ccg-dc/ to https://losantonios.com/es/refinadoras/refinadoras-laser-cuello-cisne-doble-control/5000ccg-dc/
+15:00:59	Warning: 	Moved Permanently for https://losantonios.com/es/es/refinadoras/refinadoras-laser-cuello-cisne-doble-control/6cc-v-dc/
+15:00:59	Warning: 	File has moved from https://losantonios.com/es/es/refinadoras/refinadoras-laser-cuello-cisne-doble-control/6cc-v-dc/ to https://losantonios.com/es/refinadoras/refinadoras-laser-cuello-cisne-doble-control/6cc-v-dc/
+15:00:59	Warning: 	Moved Permanently for https://losantonios.com/es/es/refinadoras/refinadoras-laser-cuello-cisne-doble-control/6ccg-v-ex-dc-7ccg-v-ex-dc/
+15:00:59	Warning: 	File has moved from https://losantonios.com/es/es/refinadoras/refinadoras-laser-cuello-cisne-doble-control/6ccg-v-ex-dc-7ccg-v-ex-dc/ to https://losantonios.com/es/refinadoras/refinadoras-laser-cuello-cisne-doble-control/6ccg-v-ex-dc-7ccg-v-ex-dc/
+15:01:01	Warning: 	Moved Permanently for https://losantonios.com/es/es/refinadoras/refinadoras-laser-cuello-cisne-doble-control/v-5000ccm-dc-v-6000ccm-dc-v-7000ccm-dc/
+15:01:01	Warning: 	File has moved from https://losantonios.com/es/es/refinadoras/refinadoras-laser-cuello-cisne-doble-control/v-5000ccm-dc-v-6000ccm-dc-v-7000ccm-dc/ to https://losantonios.com/es/refinadoras/refinadoras-laser-cuello-cisne-doble-control/v-5000ccm-dc-v-6000ccm-dc-v-7000ccm-dc/
+15:01:02	Warning: 	Moved Permanently for https://losantonios.com/es/es/refinadoras/refinadoras-laser-cuello-cisne-doble-control/refinadora-cuello-cisne-doble-control-v-6000ccg-dc-v-7000ccg-dc/
+15:01:02	Warning: 	File has moved from https://losantonios.com/es/es/refinadoras/refinadoras-laser-cuello-cisne-doble-control/refinadora-cuello-cisne-doble-control-v-6000ccg-dc-v-7000ccg-dc/ to https://losantonios.com/es/refinadoras/refinadoras-laser-cuello-cisne-doble-control/refinadora-cuello-cisne-doble-control-v-6000ccg-dc-v-7000ccg-dc/
+15:01:02	Warning: 	Moved Permanently for https://losantonios.com/es/es/refinadoras/refinadoras-traseras/refinadora-trasera-de-teja-abatible-con-inclinacion/
+15:01:02	Warning: 	File has moved from https://losantonios.com/es/es/refinadoras/refinadoras-traseras/refinadora-trasera-de-teja-abatible-con-inclinacion/ to https://losantonios.com/es/refinadoras/refinadoras-traseras/refinadora-trasera-de-teja-abatible-con-inclinacion/
+15:01:02	Warning: 	Moved Permanently for https://losantonios.com/es/es/refinadoras/refinadoras-traseras/sin-inclinacion/
+15:01:02	Warning: 	File has moved from https://losantonios.com/es/es/refinadoras/refinadoras-traseras/sin-inclinacion/ to https://losantonios.com/es/refinadoras/refinadoras-traseras/sin-inclinacion/
+15:01:04	Warning: 	Moved Permanently for https://losantonios.com/es/es/refinadoras/niveladoras-obras-y-caminos/ccgf-c1/
+15:01:04	Warning: 	File has moved from https://losantonios.com/es/es/refinadoras/niveladoras-obras-y-caminos/ccgf-c1/ to https://losantonios.com/es/refinadoras/niveladoras-obras-y-caminos/ccgf-c1/
+15:01:04	Warning: 	Moved Permanently for https://losantonios.com/es/es/refinadoras/niveladoras-obras-y-caminos/ccgf-c2/
+15:01:04	Warning: 	File has moved from https://losantonios.com/es/es/refinadoras/niveladoras-obras-y-caminos/ccgf-c2/ to https://losantonios.com/es/refinadoras/niveladoras-obras-y-caminos/ccgf-c2/
+15:01:05	Warning: 	Moved Permanently for https://losantonios.com/es/es/refinadoras/niveladoras-obras-y-caminos/ccgf-c3/
+15:01:05	Warning: 	File has moved from https://losantonios.com/es/es/refinadoras/niveladoras-obras-y-caminos/ccgf-c3/ to https://losantonios.com/es/refinadoras/niveladoras-obras-y-caminos/ccgf-c3/
+15:01:07	Warning: 	Moved Permanently for https://losantonios.com/es/es/bulldozers/bulldozer/angledozer/
+15:01:07	Warning: 	File has moved from https://losantonios.com/es/es/bulldozers/bulldozer/angledozer/ to https://losantonios.com/es/bulldozers/bulldozer/angledozer/
+15:01:07	Warning: 	Moved Permanently for https://losantonios.com/es/es/bulldozers/bulldozer/angledozer-y-tildozer/
+15:01:07	Warning: 	File has moved from https://losantonios.com/es/es/bulldozers/bulldozer/angledozer-y-tildozer/ to https://losantonios.com/es/bulldozers/bulldozer/angledozer-y-tildozer/
+15:01:08	Warning: 	Moved Permanently for https://losantonios.com/es/es/bulldozers/bulldozer/extensible-angledozer-y-tildozer/
+15:01:08	Warning: 	File has moved from https://losantonios.com/es/es/bulldozers/bulldozer/extensible-angledozer-y-tildozer/ to https://losantonios.com/es/bulldozers/bulldozer/extensible-angledozer-y-tildozer/
+15:01:09	Warning: 	Moved Permanently for https://losantonios.com/es/es/bulldozers/bulldozer/extensible-fijo/
+15:01:09	Warning: 	File has moved from https://losantonios.com/es/es/bulldozers/bulldozer/extensible-fijo/ to https://losantonios.com/es/bulldozers/bulldozer/extensible-fijo/
+15:01:09	Warning: 	Moved Permanently for https://losantonios.com/es/es/bulldozers/bulldozer/fijo/
+15:01:09	Warning: 	File has moved from https://losantonios.com/es/es/bulldozers/bulldozer/fijo/ to https://losantonios.com/es/bulldozers/bulldozer/fijo/
+15:01:09	Warning: 	Moved Permanently for https://losantonios.com/es/es/bulldozers/bulldozer/tildozer/
+15:01:09	Warning: 	File has moved from https://losantonios.com/es/es/bulldozers/bulldozer/tildozer/ to https://losantonios.com/es/bulldozers/bulldozer/tildozer/
+15:01:10	Warning: 	Moved Permanently for https://losantonios.com/es/es/bulldozers/polidozer/hidraulico-ph49/
+15:01:10	Warning: 	File has moved from https://losantonios.com/es/es/bulldozers/polidozer/hidraulico-ph49/ to https://losantonios.com/es/bulldozers/polidozer/hidraulico-ph49/
+15:01:11	Warning: 	Moved Permanently for https://losantonios.com/es/es/bulldozers/polidozer/hidraulico-ph55-ph60/
+15:01:11	Warning: 	File has moved from https://losantonios.com/es/es/bulldozers/polidozer/hidraulico-ph55-ph60/ to https://losantonios.com/es/bulldozers/polidozer/hidraulico-ph55-ph60/
+15:01:12	Warning: 	Moved Permanently for https://losantonios.com/es/es/bulldozers/polidozer/mecanico/
+15:01:12	Warning: 	File has moved from https://losantonios.com/es/es/bulldozers/polidozer/mecanico/ to https://losantonios.com/es/bulldozers/polidozer/mecanico/
+15:01:13	Warning: 	Moved Permanently for https://losantonios.com/es/es/subsoladores/subsolador/5-brazos/
+15:01:13	Warning: 	File has moved from https://losantonios.com/es/es/subsoladores/subsolador/5-brazos/ to https://losantonios.com/es/subsoladores/subsolador/5-brazos/
+15:01:13	Warning: 	Moved Permanently for https://losantonios.com/es/es/subsoladores/subsolador/7-9-brazos/
+15:01:13	Warning: 	File has moved from https://losantonios.com/es/es/subsoladores/subsolador/7-9-brazos/ to https://losantonios.com/es/subsoladores/subsolador/7-9-brazos/
+15:01:14	Warning: 	Moved Permanently for https://losantonios.com/es/es/subsoladores/subsolador/volteo/
+15:01:14	Warning: 	File has moved from https://losantonios.com/es/es/subsoladores/subsolador/volteo/ to https://losantonios.com/es/subsoladores/subsolador/volteo/
+15:01:15	Warning: 	Moved Permanently for https://losantonios.com/es/es/subsoladores/desfondador/desf-1/
+15:01:15	Warning: 	File has moved from https://losantonios.com/es/es/subsoladores/desfondador/desf-1/ to https://losantonios.com/es/subsoladores/desfondador/desf-1/
+15:01:16	Warning: 	Moved Permanently for https://losantonios.com/es/es/subsoladores/desfondador/desf-2/
+15:01:16	Warning: 	File has moved from https://losantonios.com/es/es/subsoladores/desfondador/desf-2/ to https://losantonios.com/es/subsoladores/desfondador/desf-2/
+15:01:16	Warning: 	Moved Permanently for https://losantonios.com/es/es/subsoladores/desfondador/raj-1/
+15:01:16	Warning: 	File has moved from https://losantonios.com/es/es/subsoladores/desfondador/raj-1/ to https://losantonios.com/es/subsoladores/desfondador/raj-1/
+15:01:18	Warning: 	Moved Permanently for https://losantonios.com/es/es/preparadores/chisel/fijo-2-hileras/
+15:01:18	Warning: 	File has moved from https://losantonios.com/es/es/preparadores/chisel/fijo-2-hileras/ to https://losantonios.com/es/preparadores/chisel/fijo-2-hileras/
+15:01:18	Warning: 	Moved Permanently for https://losantonios.com/es/es/preparadores/chisel/fijo-3-hileras/
+15:01:18	Warning: 	File has moved from https://losantonios.com/es/es/preparadores/chisel/fijo-3-hileras/ to https://losantonios.com/es/preparadores/chisel/fijo-3-hileras/
+15:01:19	Warning: 	Moved Permanently for https://losantonios.com/es/es/preparadores/chisel/fijo-rastrojero-3-hileras/
+15:01:19	Warning: 	File has moved from https://losantonios.com/es/es/preparadores/chisel/fijo-rastrojero-3-hileras/ to https://losantonios.com/es/preparadores/chisel/fijo-rastrojero-3-hileras/
+15:01:19	Warning: 	Moved Permanently for https://losantonios.com/es/es/preparadores/chisel/volteo-2-hileras-2/
+15:01:19	Warning: 	File has moved from https://losantonios.com/es/es/preparadores/chisel/volteo-2-hileras-2/ to https://losantonios.com/es/preparadores/chisel/volteo-2-hileras-2/
+15:01:20	Warning: 	Moved Permanently for https://losantonios.com/es/es/preparadores/chisel/volteo-3-hileras/
+15:01:20	Warning: 	File has moved from https://losantonios.com/es/es/preparadores/chisel/volteo-3-hileras/ to https://losantonios.com/es/preparadores/chisel/volteo-3-hileras/
+15:01:21	Warning: 	Moved Permanently for https://losantonios.com/es/es/preparadores/chisel/volteo-rastrojero-3-hileras/
+15:01:21	Warning: 	File has moved from https://losantonios.com/es/es/preparadores/chisel/volteo-rastrojero-3-hileras/ to https://losantonios.com/es/preparadores/chisel/volteo-rastrojero-3-hileras/
+15:01:22	Warning: 	Moved Permanently for https://losantonios.com/es/es/preparadores/chisel/semichisel-fijo-2-hileras/
+15:01:22	Warning: 	File has moved from https://losantonios.com/es/es/preparadores/chisel/semichisel-fijo-2-hileras/ to https://losantonios.com/es/preparadores/chisel/semichisel-fijo-2-hileras/
+15:01:22	Warning: 	Moved Permanently for https://losantonios.com/es/es/preparadores/chisel/semichisel-fijo-3-hileras/
+15:01:22	Warning: 	File has moved from https://losantonios.com/es/es/preparadores/chisel/semichisel-fijo-3-hileras/ to https://losantonios.com/es/preparadores/chisel/semichisel-fijo-3-hileras/
+15:01:22	Warning: 	Moved Permanently for https://losantonios.com/es/es/preparadores/chisel/semichisel-volteo-2-hileras/
+15:01:22	Warning: 	File has moved from https://losantonios.com/es/es/preparadores/chisel/semichisel-volteo-2-hileras/ to https://losantonios.com/es/preparadores/chisel/semichisel-volteo-2-hileras/
+15:01:24	Warning: 	Moved Permanently for https://losantonios.com/es/es/preparadores/chisel/semichisel-volteo-3-hileras/
+15:01:24	Warning: 	File has moved from https://losantonios.com/es/es/preparadores/chisel/semichisel-volteo-3-hileras/ to https://losantonios.com/es/preparadores/chisel/semichisel-volteo-3-hileras/
+15:01:24	Warning: 	Moved Permanently for https://losantonios.com/es/es/preparadores/molon/rodillo-con-chisel-plegable-hidraulico/
+15:01:24	Warning: 	File has moved from https://losantonios.com/es/es/preparadores/molon/rodillo-con-chisel-plegable-hidraulico/ to https://losantonios.com/es/preparadores/molon/rodillo-con-chisel-plegable-hidraulico/
+15:01:26	Warning: 	Moved Permanently for https://losantonios.com/es/es/preparadores/molon/rodillo-plegable-hidraulico/
+15:01:26	Warning: 	File has moved from https://losantonios.com/es/es/preparadores/molon/rodillo-plegable-hidraulico/ to https://losantonios.com/es/preparadores/molon/rodillo-plegable-hidraulico/
+15:01:26	Warning: 	Moved Permanently for https://losantonios.com/es/es/tolvas/tolva/tol80-tol120-tol160/
+15:01:26	Warning: 	File has moved from https://losantonios.com/es/es/tolvas/tolva/tol80-tol120-tol160/ to https://losantonios.com/es/tolvas/tolva/tol80-tol120-tol160/
+15:01:27	Warning: 	Moved Permanently for https://losantonios.com/es/es/plantadoras/vinas/plantadora-de-vinas/
+15:01:27	Warning: 	File has moved from https://losantonios.com/es/es/plantadoras/vinas/plantadora-de-vinas/ to https://losantonios.com/es/plantadoras/vinas/plantadora-de-vinas/
+15:01:27	Warning: 	Retry after error -4 (No data (connection closed)) at link https://losantonios.com/es/es/plantadoras/arboles/plantadora-de-arboles/ (from https://losantonios.com/es/plantadoras/arboles/)
+15:01:29	Warning: 	Retry after error -4 (No data (connection closed)) at link https://losantonios.com/es/es/otros/arrancadora/arrancadora-av/ (from https://losantonios.com/es/otros/arrancadora/)
+15:01:29	Warning: 	Moved Permanently for https://losantonios.com/es/es/otros/despedregadora/despedregadora-dh/
+15:01:29	Warning: 	File has moved from https://losantonios.com/es/es/otros/despedregadora/despedregadora-dh/ to https://losantonios.com/es/otros/despedregadora/despedregadora-dh/
+15:01:29	Warning: 	Moved Permanently for https://losantonios.com/es/es/otros/carro-porta-aperos/carro/
+15:01:29	Warning: 	File has moved from https://losantonios.com/es/es/otros/carro-porta-aperos/carro/ to https://losantonios.com/es/otros/carro-porta-aperos/carro/
+15:01:30	Warning: 	Retry after error -4 (No data (connection closed)) at link https://losantonios.com/es/otros/acaballonador/acaballonador-aca800/ (from https://losantonios.com/es/es/otros/acaballonador/acaballonador-aca800/)
+15:01:32	Warning: 	Retry after error -4 (No data (connection closed)) at link https://losantonios.com/es/otros/alomador/alomador-alo7/ (from https://losantonios.com/es/es/otros/alomador/alomador-alo7/)
+15:01:33	Warning: 	Moved Permanently for https://losantonios.com/es/contacto/
+15:01:33	Warning: 	File has moved from https://losantonios.com/es/contacto/ to https://losantonios.com/fr/contacto/
+15:01:36	Warning: 	Moved Permanently for https://losantonios.com/es/es/traillas/traillas-de-volteo-vinas-y-arbolado/tsh/
+15:01:36	Warning: 	File has moved from https://losantonios.com/es/es/traillas/traillas-de-volteo-vinas-y-arbolado/tsh/ to https://losantonios.com/es/traillas/traillas-de-volteo-vinas-y-arbolado/tsh/
+15:01:36	Warning: 	Moved Permanently for https://losantonios.com/es/es/traillas/traillas-de-volteo-vinas-y-arbolado/tvh/
+15:01:36	Warning: 	File has moved from https://losantonios.com/es/es/traillas/traillas-de-volteo-vinas-y-arbolado/tvh/ to https://losantonios.com/es/traillas/traillas-de-volteo-vinas-y-arbolado/tvh/
+15:01:37	Warning: 	Retry after error -4 (No data (connection closed)) at link https://losantonios.com/es/refinadoras/refinadoras-cuello-cisne/6cc-v/ (from https://losantonios.com/es/es/refinadoras/refinadoras-cuello-cisne/6cc-v/)
+15:01:45	Warning: 	Retry after error -4 (No data (connection closed)) at link https://losantonios.com/es/bulldozers/bulldozer/extensible-fijo/ (from https://losantonios.com/es/es/bulldozers/bulldozer/extensible-fijo/)
+15:01:51	Warning: 	Moved Permanently for https://losantonios.com/es/es/plantadoras/arboles/plantadora-de-arboles/
+15:01:51	Warning: 	File has moved from https://losantonios.com/es/es/plantadoras/arboles/plantadora-de-arboles/ to https://losantonios.com/es/plantadoras/arboles/plantadora-de-arboles/
+15:01:51	Warning: 	Moved Permanently for https://losantonios.com/es/es/otros/arrancadora/arrancadora-av/
+15:01:51	Warning: 	File has moved from https://losantonios.com/es/es/otros/arrancadora/arrancadora-av/ to https://losantonios.com/es/otros/arrancadora/arrancadora-av/
+15:01:53	Warning: 	Retry after error -4 (No data (connection closed)) at link https://losantonios.com/wp-content/uploads/2021/02/medidas-bulldozer-fijo.gif (from https://losantonios.com/es/bulldozers/bulldozer/fijo/)
+15:01:53	Warning: 	Retry after error -4 (No data (connection closed)) at link https://losantonios.com/wp-content/uploads/2021/02/medidas-bulldozer-tildozer.gif (from https://losantonios.com/es/bulldozers/bulldozer/tildozer/)
+
+HTTrack Website Copier/3.49-2 mirror complete in 2 minutes 30 seconds : 450 links scanned, 354 files written (29363492 bytes overall) [22341558 bytes received at 148943 bytes/sec], 9359244 bytes transferred using HTTP compression in 238 files, ratio 21%, 32.2 requests per connection
+(7 errors, 167 warnings, 0 messages)

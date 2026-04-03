@@ -1,0 +1,47 @@
+/*
+Theme Name: Agrotécnica Los Antonios Child
+Template: losantonios
+Author: Bogart y Bacall
+Author URI: https://wordpress.org/
+Description: Los Antonios Theme is a customized version of Twenty Sixteen template.
+Version: 2020.1684924509
+Updated: 2023-05-24 10:35:09
+
+*/
+
+.header .container .navbar {
+  max-width: 1095px;
+}
+.home-categorias-scroll .widthcontainer .innercontainer .item-cat span{
+	font-size:22px !important;
+}
+.listing-item::before
+{
+  display: none !important;
+}
+.page-id-14447 .title
+{
+  text-align: center !important;
+  display: block;
+  margin-top: 1em;
+  font-size: 24px;
+}
+
+.single-post .claim {
+  text-align: center !important;
+}
+.single-post h1 {
+  text-align: center !important;
+	font-size:36px !important;
+}
+.single-post h3 {
+ margin-top: 1.5em !important;
+	font-size:22px !important;
+}
+.single-post h4 {
+ 
+	font-size:18px !important;
+	color:#000 !important;
+	text-decoration:underline !important;
+	margin-top: 1.5em !important;
+}
