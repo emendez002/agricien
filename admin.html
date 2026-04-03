@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Acceso Administrativo | AgriCien</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="cms.js"></script>
+</head>
+<body style="background:var(--bg); display:flex; flex-direction:column; min-height:100vh; align-items:center; justify-content:center;">
+    
+    <div class="grain"></div>
+    
+  <div class="container" style="max-width:400px; width:100%; position:relative; z-index:2;">
+    <div class="panel" style="padding: 40px; background: rgba(0,0,0,.4); border-radius: 20px; text-align:center;">
+        
+        <div class="logoWrap small" style="margin: 0 auto 20px;">
+		  <img class="logoImg small" alt="AgriCien" src="https://images.squarespace-cdn.com/content/v1/5bd1dc11c46f6d371c488433/1540486117041-YQVF9DGXX9520IEEVI1E/image-asset.png"/>
+		</div>
+
+        <h2 style="margin-bottom:10px;">Acceso Editor</h2>
+        <p style="color:var(--muted2); font-size:14px; margin-bottom: 24px;">Administración de Contenidos AgriCien.</p>
+
+        <div id="login-form">
+            <input type="email" id="email" placeholder="Correo electrónico" style="width:100%; padding:14px; margin-bottom:10px; border-radius:10px; border:1px solid rgba(255,255,255,.1); background:rgba(0,0,0,.2); color:white;"/>
+            <input type="password" id="pwd" placeholder="Contraseña" style="width:100%; padding:14px; margin-bottom:20px; border-radius:10px; border:1px solid rgba(255,255,255,.1); background:rgba(0,0,0,.2); color:white;"/>
+            
+            <button id="btn-login" class="btn primary" style="width:100%; padding:14px; font-size:16px;">Ingresar</button>
+            <p id="login-err" style="color:crimson; font-size:13px; margin-top:14px; display:none;">Credenciales inválidas.</p>
+        </div>
+
+        <div id="admin-panel" style="display:none; text-align:left;">
+            <p style="color:var(--brand2); margin-bottom:20px;">¡Hola! Has iniciado sesión como <strong id="user-role"></strong>.</p>
+            
+            <div style="background:rgba(255,255,255,0.05); padding:15px; border-radius:10px; margin-bottom:20px;">
+                <p style="font-size:13px; margin-bottom:10px;"><strong style="color:white;">Instrucciones para editar:</strong><br/>
+                Para ocultar o reordenar tarjetas del catálogo, simplemente vuelve a la página que deseas de nuestra web principal. Verás habilitados los controles encima de cada elemento.</p>
+                <a href="index.html" class="btn primary" style="display:block; text-align:center;">Ir a Home / Editar sitio</a>
+            </div>
+
+            <div id="admin-only-section" style="display:none;">
+                <h3 style="font-size:16px; margin-bottom:10px;">Crear nuevo Editor</h3>
+                <input type="email" id="new-email" placeholder="Nuevo correo" style="width:100%; padding:10px; margin-bottom:10px; border-radius:8px; border:1px solid rgba(255,255,255,.1); background:rgba(0,0,0,.2); color:white;"/>
+                <input type="text" id="new-pwd" placeholder="Contraseña temporal" style="width:100%; padding:10px; margin-bottom:10px; border-radius:8px; border:1px solid rgba(255,255,255,.1); background:rgba(0,0,0,.2); color:white;"/>
+                <button id="btn-add-editor" class="btn" style="width:100%;">Registrar Editor</button>
+                <p id="add-msg" style="font-size:12px; margin-top:10px;"></p>
+                
+                <h4 style="font-size:14px; margin-top:20px; margin-bottom:10px;">Editores actuales:</h4>
+                <ul id="editor-list" style="font-size:12px; color:var(--muted2); padding-left:14px;"></ul>
+            </div>
+
+            <button id="btn-logout" class="btn" style="width:100%; margin-top:20px; border:1px solid rgba(255,255,255,0.1);">Cerrar Sesión</button>
+        </div>
+
+    </div>
+  </div>
+
+  <script>
+      document.addEventListener('DOMContentLoaded', () => {
+          const session = getSession();
+          if(session) {
+              document.getElementById('login-form').style.display = 'none';
+              document.getElementById('admin-panel').style.display = 'block';
+              document.getElementById('user-role').textContent = session.role;
+              
+              if(session.role === 'admin') {
+                  document.getElementById('admin-only-section').style.display = 'block';
+                  renderEditors();
+              }
+          }
+
+          document.getElementById('btn-login').onclick = () => {
+              const ok = loginUser(document.getElementById('email').value.trim(), document.getElementById('pwd').value);
+              if(ok) location.reload();
+              else document.getElementById('login-err').style.display = 'block';
+          };
+
+          document.getElementById('btn-logout').onclick = () => {
+              logoutUser(); location.reload();
+          };
+
+          document.getElementById('btn-add-editor').onclick = () => {
+              const e = document.getElementById('new-email').value.trim();
+              const p = document.getElementById('new-pwd').value.trim();
+              if(e && p) {
+                  if(addEditor(e, p)) {
+                      document.getElementById('add-msg').style.color = '#4caf50';
+                      document.getElementById('add-msg').textContent = 'Se agregó el editor exitosamente.';
+                      renderEditors();
+                  } else {
+                      document.getElementById('add-msg').style.color = 'crimson';
+                      document.getElementById('add-msg').textContent = 'El usuario ya existe.';
+                  }
+              }
+          };
+
+          function renderEditors() {
+              const ul = document.getElementById('editor-list');
+              ul.innerHTML = '';
+              getUsers().forEach(u => {
+                  const li = document.createElement('li');
+                  li.textContent = u.email + ' (' + u.password + ')';
+                  ul.appendChild(li);
+              });
+          }
+      });
+  </script>
+</body>
+</html>
