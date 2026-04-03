@@ -352,6 +352,18 @@
   });
 
   function googleFormSubmit(e){
+    const msgField = document.querySelector('textarea[name="entry.540142033"]');
+    const inputPagina = document.getElementById("origen_pagina");
+    const inputElemento = document.getElementById("origen_elemento");
+    
+    // Adjuntar trazabilidad al mensaje de forma transparente antes de enviar
+    if (msgField && inputPagina && inputElemento && msgField.value.trim() !== '') {
+      const traceText = "\n\n--- [Trazabilidad Interna] ---\nOrigen de Página: " + (inputPagina.value || 'N/A') + "\nElemento/Botón: " + (inputElemento.value || 'N/A');
+      if (!msgField.value.includes('[Trazabilidad')) {
+        msgField.value += traceText;
+      }
+    }
+
     const msg = document.getElementById("formMsg");
     const btn = document.getElementById("submitBtn");
 
