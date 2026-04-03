@@ -223,8 +223,6 @@ function initCMS() {
     const grids = document.querySelectorAll('.grid3, .servicesGrid, .grid');
     if (!grids.length) return; 
     
-    const grid = grids[0];
-    
     fetch(SHEET_CSV_URL, { cache: "no-store" })
       .then(r => r.text())
       .then(csvText => {
@@ -232,16 +230,28 @@ function initCMS() {
           if(remoteJson && remoteJson.pages) {
               globalCMSDb = remoteJson;
               setLocalConfig(globalCMSDb); 
-              applyCMSConfig(globalCMSDb, grid, pageId, isEditing);
+              grids.forEach((grid, idx) => {
+                  let subPageId = grids.length > 1 ? `${pageId}_g${idx}` : pageId;
+                  applyCMSConfig(globalCMSDb, grid, subPageId, isEditing);
+              });
           } else {
-              applyCMSConfig(globalCMSDb, grid, pageId, isEditing);
+              grids.forEach((grid, idx) => {
+                  let subPageId = grids.length > 1 ? `${pageId}_g${idx}` : pageId;
+                  applyCMSConfig(globalCMSDb, grid, subPageId, isEditing);
+              });
           }
       }).catch(err => {
           console.warn("Fallo revalidación de Google Forms", err);
-          applyCMSConfig(globalCMSDb, grid, pageId, isEditing);
+          grids.forEach((grid, idx) => {
+              let subPageId = grids.length > 1 ? `${pageId}_g${idx}` : pageId;
+              applyCMSConfig(globalCMSDb, grid, subPageId, isEditing);
+          });
       });
       
-    applyCMSConfig(globalCMSDb, grid, pageId, isEditing);
+    grids.forEach((grid, idx) => {
+        let subPageId = grids.length > 1 ? `${pageId}_g${idx}` : pageId;
+        applyCMSConfig(globalCMSDb, grid, subPageId, isEditing);
+    });
 }
 
 function applyCMSConfig(db, grid, pageId, isEditing) {
@@ -341,18 +351,21 @@ function applyCMSConfig(db, grid, pageId, isEditing) {
             });
         });
 
-        grid.addEventListener('dragover', e => {
-            e.preventDefault();
-            const afterElement = getDragAfterElement(grid, e.clientY);
-            const draggable = grid.querySelector('.dragging');
-            if(draggable) {
-                if (afterElement == null) {
-                    grid.appendChild(draggable);
-                } else {
-                    grid.insertBefore(draggable, afterElement);
+        if(!grid.dataset.cmsDragBound) {
+            grid.addEventListener('dragover', e => {
+                e.preventDefault();
+                const afterElement = getDragAfterElement(grid, e.clientY);
+                const draggable = grid.querySelector('.dragging');
+                if(draggable) {
+                    if (afterElement == null) {
+                        grid.appendChild(draggable);
+                    } else {
+                        grid.insertBefore(draggable, afterElement);
+                    }
                 }
-            }
-        });
+            });
+            grid.dataset.cmsDragBound = "true";
+        }
     }
 
     function getDragAfterElement(container, y) {
