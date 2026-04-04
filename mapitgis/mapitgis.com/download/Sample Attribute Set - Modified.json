@@ -1,0 +1,91 @@
+{
+    "name": "Sample Attribute Set - Modified",
+    "description": "Sample attribute set showing potential to create drop-down lists of specific types, multi select lists and barcodes. ",
+    "fields": [
+        {
+            "name": "Greek letters",
+            "dataType": "TEXT",
+            "isStyling": false,
+            "defaultValue": "",
+            "values": [
+                "alfa",
+                "beta",
+                "omega"
+            ]
+        },
+        {
+            "name": "Number of cases",
+            "dataType": "INTEGER (LONG)",
+            "isStyling": false,
+            "defaultValue": "",
+            "values": [
+                "1",
+                "2",
+                "3"
+            ]
+        },
+        {
+            "name": "Distance",
+            "dataType": "DOUBLE",
+            "isStyling": false,
+            "defaultValue": "",
+            "values": [
+                "0.5",
+                "1.0",
+                "1.5"
+            ]
+        },
+        {
+            "name": "QR code",
+            "dataType": "BARCODE",
+            "isStyling": false
+        },
+        {
+            "name": "Höhlung",
+            "dataType": "MULTISELECT",
+            "isStyling": false,
+            "defaultValue": "",
+            "values": [
+                "Spechthöhle",
+                "Astbruch",
+                "Rindentasche",
+                "Riss",
+                "Sonstiges"
+            ]
+        },
+        {
+            "name": "Größe der Struktur",
+            "dataType": "MULTISELECT",
+            "isStyling": false,
+            "defaultValue": "",
+            "values": [
+                "Klein",
+                "Mittel",
+                "Groß"
+            ]
+        },
+        {
+            "name": "Besatzspuren",
+            "dataType": "MULTISELECT",
+            "isStyling": false,
+            "defaultValue": "",
+            "values": [
+                "Kot",
+                "Urin",
+                "Fett",
+                "Sonstiges"
+            ]
+        },
+        {
+            "name": "Quartier",
+            "dataType": "MULTISELECT",
+            "isStyling": false,
+            "defaultValue": "",
+            "values": [
+                "Ja",
+                "Nein",
+                "Verdacht"
+            ]
+        }
+    ]
+}

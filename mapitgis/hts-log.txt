@@ -1,0 +1,13 @@
+HTTrack3.49-2+htsswf+htsjava launched on Fri, 03 Apr 2026 17:03:58 at https://mapitgis.com/ +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "en, *" https://mapitgis.com/ -O1 "F:\mapitgis\mapitgis" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+17:07:34	Warning: 	Retry after error -2 (Receive Time Out) at link https://mapitgis.com/blog/tags/Update/ (from https://mapitgis.com/blog/)
+17:07:35	Warning: 	Retry after error -2 (Receive Time Out) at link https://mapitgis.com/blog/tags/mapping/ (from https://mapitgis.com/blog/)
+
+HTTrack Website Copier/3.49-2 mirror complete in 4 minutes 30 seconds : 256 links scanned, 253 files written (66341248 bytes overall) [58557212 bytes received at 216878 bytes/sec], 37833055 bytes transferred using HTTP compression in 197 files, ratio 69%, 23.4 requests per connection
+(No errors, 2 warnings, 0 messages)

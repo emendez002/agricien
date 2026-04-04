@@ -274,28 +274,65 @@ function initCMS() {
 
 function applyGlobalNavSync(db) {
     if(!db.pages) return;
+    
     let allHiddenLinks = [];
     Object.values(db.pages).forEach(pageConfig => {
         if(pageConfig.hiddenLinks) {
             allHiddenLinks = allHiddenLinks.concat(pageConfig.hiddenLinks);
         }
     });
+
+    let indexOrderedLinks = [];
+    if(db.pages['index'] && db.pages['index'].orderedLinks) {
+        indexOrderedLinks = db.pages['index'].orderedLinks;
+    }
     
     // Normalizar para no afectar enlaces vacios o #
     allHiddenLinks = allHiddenLinks.filter(h => h && !h.startsWith('#'));
 
-    document.querySelectorAll('nav.links a, .drawer a').forEach(aEl => {
-        let href = aEl.getAttribute('href');
-        if (href) {
-            // Remueve hash anchors para la comparacion
-            href = href.split('#')[0];
-            if (href && allHiddenLinks.includes(href)) {
-                aEl.style.display = 'none';
-            } else {
-                aEl.style.display = '';
+    document.querySelectorAll('nav.links, .drawer').forEach(navEl => {
+        let aEls = Array.from(navEl.querySelectorAll('a'));
+        
+        aEls.forEach(aEl => {
+            let href = aEl.getAttribute('href');
+            if (href) {
+                // Remueve hash anchors para la comparacion
+                href = href.split('#')[0];
+                if (href && allHiddenLinks.includes(href)) {
+                    aEl.style.display = 'none';
+                } else {
+                    aEl.style.display = '';
+                }
             }
+        });
+
+        if (indexOrderedLinks.length > 0) {
+            let originalMap = new Map();
+            aEls.forEach((a, index) => originalMap.set(a, index));
+
+            aEls.sort((a, b) => {
+                let hrefA = (a.getAttribute('href') || '').split('#')[0];
+                let hrefB = (b.getAttribute('href') || '').split('#')[0];
+                
+                let scoreA = getNavScore(hrefA, a.getAttribute('href'), indexOrderedLinks, originalMap.get(a));
+                let scoreB = getNavScore(hrefB, b.getAttribute('href'), indexOrderedLinks, originalMap.get(b));
+                
+                return scoreA - scoreB;
+            });
+
+            aEls.forEach(aEl => navEl.appendChild(aEl));
         }
     });
+}
+
+function getNavScore(hrefWithoutHash, fullHref, orderArray, originalIdx) {
+    if (hrefWithoutHash === 'index.html' || hrefWithoutHash === '') return -1000 + originalIdx;
+    if (fullHref && fullHref.startsWith('#')) return 1000 + originalIdx;
+    
+    let idx = orderArray.indexOf(hrefWithoutHash);
+    if (idx !== -1) return idx;
+    
+    return 500 + originalIdx;
 }
 
 function applyCMSConfig(db, grid, pageId, isEditing) {
@@ -432,20 +469,25 @@ function applyCMSConfig(db, grid, pageId, isEditing) {
             const hiddenCardsMatch = currentCards.filter(c => c.classList.contains('hidden-card'));
             const currentHidden = hiddenCardsMatch.map(c => c.id);
             
-            const hiddenLinks = [];
-            hiddenCardsMatch.forEach(c => {
+            const orderedLinks = [];
+            currentCards.forEach(c => {
                 const link = c.querySelector('a.btn, a[href]');
                 if(link) {
                     let href = link.getAttribute('href');
                     if(href) {
                         href = href.split('#')[0];
-                        if(href) hiddenLinks.push(href);
+                        if(href) {
+                           if (c.classList.contains('hidden-card')) {
+                               hiddenLinks.push(href);
+                           }
+                           orderedLinks.push(href);
+                        }
                     }
                 }
             });
             
             if(!globalCMSDb.pages) globalCMSDb.pages = {};
-            globalCMSDb.pages[pageId] = { order: currentOrder, hidden: currentHidden, hiddenLinks: hiddenLinks };
+            globalCMSDb.pages[pageId] = { order: currentOrder, hidden: currentHidden, hiddenLinks: hiddenLinks, orderedLinks: orderedLinks };
             
             setLocalConfig(globalCMSDb);
             sendUpdateToGoogle(globalCMSDb);
