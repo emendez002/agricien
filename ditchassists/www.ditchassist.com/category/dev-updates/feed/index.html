@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Dev Updates | Ditch Assist™ | RTK Grade Control for Surface Drainage, Excavation &amp; More</title>
+	<atom:link href="https://www.ditchassist.com/category/dev-updates/feed/" rel="self" type="application/rss+xml" />
+	<link>https://www.ditchassist.com</link>
+	<description>Simple. Affordable. Grade Control</description>
+	<lastBuildDate>Wed, 07 May 2025 16:05:02 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.9.4</generator>
+
+<image>
+	<url>https://www.ditchassist.com/wp-content/uploads/2022/04/cropped-Black_SQUARE-32x32.png</url>
+	<title>Dev Updates | Ditch Assist™ | RTK Grade Control for Surface Drainage, Excavation &amp; More</title>
+	<link>https://www.ditchassist.com</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>Alpha Release 4.28.3 Updates</title>
+		<link>https://www.ditchassist.com/alpha-release-4-28-3-updates/</link>
+		
+		<dc:creator><![CDATA[Ditch Assist]]></dc:creator>
+		<pubDate>Wed, 07 May 2025 15:18:03 +0000</pubDate>
+				<category><![CDATA[Dev Updates]]></category>
+		<guid isPermaLink="false">https://www.ditchassist.com/?p=213708</guid>
+
+					<description><![CDATA[The 4.28.3 alpha release has implemented a few new updates and features for testing before we roll these to the long term release:]]></description>
+										<content:encoded><![CDATA[
+<p>The 4.28.3 alpha release has implemented a few new updates and features for testing before we roll these to the long term release:</p>
+
+
+
+<ol class="wp-block-list">
+<li><strong>Auto Nudge is currently DISABLED by default</strong>
+<ul class="wp-block-list">
+<li>Due to some user confusion and while we work on a few additional updates to Auto Nudge, it is disabled by default from release 4.28.3 onwards until further notice, and can be enabled via Settings.</li>
+
+
+
+<li>Before enabling Auto Nudge, be sure to read about Auto Nudge in either the User Manual or at least view the Quick Start Guide to gain an understanding of how it is designed to function. It works as intended, and most reported issues were a result of users not fully understanding how it is supposed to function. </li>
+</ul>
+</li>
+
+
+
+<li><strong>Auto Download of IDM flow mapping in covered areas</strong>
+<ul class="wp-block-list">
+<li>This was also included in the previous beta versions from 4.27.2.</li>
+
+
+
+<li>When the tablet is online (not connected to Ditch Assist module Wi-Fi), zooming in to fields in covered areas will auto download the IDM mapping</li>
+
+
+
+<li>All downloaded IDM will be saved to tablet memory and available when offline (it will automatically display when you zoom back in to the same zoom levels).</li>
+
+
+
+<li>Note that only zoom levels that are displayed when online are cached. If you find that at some zoom levels the IDM lines disappear this means you didn't display them at this location and zoom level when online.</li>
+</ul>
+</li>
+
+
+
+<li><strong>Temporary RTK Loss Filter</strong>
+<ul class="wp-block-list">
+<li>This version introduces a new filter that detects temporary drops in RTK lasting just a few seconds. It is designed to improve performance where GPS signals occasionally drop out of RTK for 1-2 seconds before RTK is restored again. This has caused issues for users when surveying (large elevation spikes in survey profiles) and grading (sudden responses as a result of significant elevation changes).</li>
+
+
+
+<li><strong>This setting is enabled by default, and can be toggled ON/OFF via the Accuracy Loss Warning setting in Settings.</strong></li>
+
+
+
+<li>When surveying, any recorded points where the quality was not RTK are automatically removed, so survey profiles should only show data that were RTK accurate.</li>
+
+
+
+<li>When auto grading using the hydraulic valve, HOLD is auto-activated as soon as loss of RTK is detected and the user notified by on-screen pop-up. When RTK is restored the HOLD is released and normal operation resumes.
+<ul class="wp-block-list">
+<li>HOLD stops any outputs to the hydraulic valve while still displaying live information on the screen</li>
+
+
+
+<li>While HOLD is applied, the only way to operate the implement hydraulics is via manual controls</li>
+</ul>
+</li>
+
+
+
+<li>In our analysis and testing we found that these issues typically last 1-3 seconds, with the receiver dropping from FIX to SINGLE and then going back to FIX again. </li>
+
+
+
+<li><strong>NOTE</strong>: With this setting enabled, auto grading is only possible with RTK messages coming from the GPS. Users running John Deere SF-RTK receivers may need to disable this setting as we've found that these receivers don't provide a true RTK message in the NMEA sentences, even when they are running at RTK-like accuracy.</li>
+</ul>
+</li>
+</ol>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>2025 New Year Dev Update: Estimated Volume in Slope-IQ</title>
+		<link>https://www.ditchassist.com/2025-new-year-dev-update-estimated-volume-in-slope-iq/</link>
+		
+		<dc:creator><![CDATA[Ditch Assist]]></dc:creator>
+		<pubDate>Thu, 09 Jan 2025 12:01:24 +0000</pubDate>
+				<category><![CDATA[Dev Updates]]></category>
+		<guid isPermaLink="false">https://www.ditchassist.com/?p=212349</guid>
+
+					<description><![CDATA[Beginning in Alpha Release version 4.28.0 we are testing a new function within Slope-IQ that displays the estimated volume of earth to be moved for a ditch design. You&#8217;ll see an estimated value in either cubic feet or cubic meters depending on which measurement system you are using. The calculation is based on the design [&#8230;]]]></description>
+										<content:encoded><![CDATA[
+<p>Beginning in Alpha Release version 4.28.0 we are testing a new function within Slope-IQ that displays the estimated volume of earth to be moved for a ditch design. You'll see an estimated value in either cubic feet or cubic meters depending on which measurement system you are using. The calculation is based on the design currently loaded in Slope-IQ, so it will work for both best-fit and customized designs. </p>
+
+
+
+<p>To see an accurate estimate, make sure you have set the new Track Swath Width value in Settings with the width of your implement or desired ditch bottom width (it defaults to 8ft). This new function will help you determine how much material you'll need to move for different design parameters, or to test different routes to drain the same area and determine which requires the least earth moving.</p>
+
+
+
+<p>Please remember that the estimated volume value is an estimate based on the implement width, and does not factor in side slopes.</p>
+
+
+
+<p>You can try it out in the Alpha release that's now available for download from our website at <a href="https://www.ditchassist.com/app-releases/">https://www.ditchassist.com/app-releases/</a></p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>2025 New Year Dev Update: Implement Width Setting</title>
+		<link>https://www.ditchassist.com/2025-new-year-dev-update-implement-width-setting/</link>
+		
+		<dc:creator><![CDATA[Ditch Assist]]></dc:creator>
+		<pubDate>Thu, 09 Jan 2025 00:13:00 +0000</pubDate>
+				<category><![CDATA[Dev Updates]]></category>
+		<guid isPermaLink="false">https://www.ditchassist.com/?p=212353</guid>
+
+					<description><![CDATA[In response to user feedback, we have added a setting that allows users to enter their implement with. This is then used on the map to paint more accurate coverage; the width of the painted line on the map will be to scale. This should benefit those implementing land leveling or land forming designs. We&#8217;re [&#8230;]]]></description>
+										<content:encoded><![CDATA[
+<p>In response to user feedback, we have added a setting that allows users to enter their implement with. This is then used on the map to paint more accurate coverage; the width of the painted line on the map will be to scale. This should benefit those implementing land leveling or land forming designs. We're also using this setting for an upcoming new feature to provide estimated volume of earth to be moved in ditch designs (see our next post). </p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>2025 New Year Dev Update: IDM Auto Download and Increased Coverage Areas</title>
+		<link>https://www.ditchassist.com/2025-new-year-dev-update-idm-auto-download-and-increased-coverage-areas/</link>
+		
+		<dc:creator><![CDATA[Ditch Assist]]></dc:creator>
+		<pubDate>Wed, 08 Jan 2025 21:06:18 +0000</pubDate>
+				<category><![CDATA[Dev Updates]]></category>
+		<guid isPermaLink="false">https://www.ditchassist.com/?p=212338</guid>
+
+					<description><![CDATA[Over the past year, Ideal Drainage Mapping (IDM) has proven to be a game-changer for hundreds of users, helping them identify optimal drainage routes within their fields. We&#8217;ve heard from many that it&#8217;s been a transformative tool for improving water management. IDM was initially rolled out via an online Portal, allowing Ditch Assist owners to [&#8230;]]]></description>
+										<content:encoded><![CDATA[
+<p>Over the past year, <strong>Ideal Drainage Mapping (IDM)</strong> has proven to be a game-changer for hundreds of users, helping them identify optimal drainage routes within their fields. We've heard from many that it's been a transformative tool for improving water management.</p>
+
+
+
+<p>IDM was initially rolled out via an online Portal, allowing <strong>Ditch Assist</strong> owners to locate their fields and download flow route map layers in KML format. These layers could then be imported into the Ditch Assist app to display as map overlays.</p>
+
+
+
+<p>While this approach works well for most users, we realized we could make it even simpler, staying true to the original <strong>Ditch Assist vision</strong> of building tools that are as intuitive as possible. That’s why we’re excited to introduce a new feature that streamlines the process of downloading and saving IDM maps to your tablet.</p>
+
+
+
+<p>Starting with our latest <strong>beta release (4.27.2)</strong>, available now on the <a href="https://www.ditchassist.com">official Ditch Assist website</a>, IDM flow maps will automatically download when you connect your tablet to the internet and zoom in to your fields. Here's how it works:</p>
+
+
+
+<ol class="wp-block-list">
+<li><strong>Update to version 4.27.2 or later</strong>.</li>
+
+
+
+<li>With your tablet connected to the internet, <strong>pan and zoom</strong> the map to your fields.</li>
+
+
+
+<li>Zoom to various levels and pan around to load the IDM layers fully.</li>
+</ol>
+
+
+
+<p>Once loaded, everything you see online will be saved to your tablet’s internal memory. Later, when you’re offline and working in the field, these layers will automatically reappear as you zoom in to the same fields.</p>
+
+
+
+<p>We’ve also expanded IDM coverage! It now includes more areas in <strong>Manitoba</strong> and <strong>Saskatchewan</strong> with high-resolution, LiDAR-based flow mapping, as well as major agricultural regions in <strong>Minnesota</strong> and <strong>all of Iowa</strong>. Additional U.S. regions are already in progress, so stay tuned!</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>2025 New Year Dev Update: Auto Nudge</title>
+		<link>https://www.ditchassist.com/2025-new-year-dev-update-1-auto-nudge/</link>
+		
+		<dc:creator><![CDATA[Ditch Assist]]></dc:creator>
+		<pubDate>Mon, 06 Jan 2025 20:43:43 +0000</pubDate>
+				<category><![CDATA[Dev Updates]]></category>
+		<guid isPermaLink="false">https://www.ditchassist.com/?p=212332</guid>
+
+					<description><![CDATA[In fall 2024 we rolled out Auto Nudge in our beta app. While we believe it was (and is) functioning as programmed (based on extensive testing), some users experienced issues with unexpected deep cuts. Upon investigation, it seems this was partly related to solar storms (causing RTK to do crazy things) and partly due to [&#8230;]]]></description>
+										<content:encoded><![CDATA[
+<p>In fall 2024 we rolled out Auto Nudge in our beta app. While we believe it was (and is) functioning as programmed (based on extensive testing), some users experienced issues with unexpected deep cuts. Upon investigation, it seems this was partly related to solar storms (causing RTK to do crazy things) and partly due to the way users interpreted the new functionality and how they expected it to work.</p>
+
+
+
+<p>The initial version of Auto Nudge requires the user to manually increase or decrease the pass number so that the app knows how much to cut on that pass based on a max. cut value in Settings. What happened in some cases is users worked on sections of a run, increasing the pass numbers as they worked, and then moved on to a brand new section expecting the pass counter to reset. Because it didn't, they ended up taking a big bite on the initial pass.</p>
+
+
+
+<p>In these cases, Auto Nudge was working as we had programmed it to, but obviously we'd overlooked some important factors related to the user experience. We are currently investigating other logic options for Auto Nudge, with our ultimate goal being to automatically determine the required cut depth for every pass without the user needing to do anything. We hope to have an updated test version in Q1 of 2025.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

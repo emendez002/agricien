@@ -221,7 +221,21 @@ function initCMS() {
     }
 
     const grids = document.querySelectorAll('.grid3, .servicesGrid, .grid');
-    if (!grids.length) return; 
+    if (!grids.length) {
+        // Ejecutar syncNav aunque no haya grid
+        fetch(SHEET_CSV_URL, { cache: "no-store" })
+          .then(r => r.text())
+          .then(csvText => {
+              const remoteJson = parseCSVLastJSON(csvText);
+              if(remoteJson && remoteJson.pages) {
+                  globalCMSDb = remoteJson;
+                  setLocalConfig(globalCMSDb); 
+                  applyGlobalNavSync(globalCMSDb);
+              }
+          });
+        applyGlobalNavSync(globalCMSDb);
+        return; 
+    }
     
     fetch(SHEET_CSV_URL, { cache: "no-store" })
       .then(r => r.text())
@@ -234,11 +248,13 @@ function initCMS() {
                   let subPageId = grids.length > 1 ? `${pageId}_g${idx}` : pageId;
                   applyCMSConfig(globalCMSDb, grid, subPageId, isEditing);
               });
+              applyGlobalNavSync(globalCMSDb);
           } else {
               grids.forEach((grid, idx) => {
                   let subPageId = grids.length > 1 ? `${pageId}_g${idx}` : pageId;
                   applyCMSConfig(globalCMSDb, grid, subPageId, isEditing);
               });
+              applyGlobalNavSync(globalCMSDb);
           }
       }).catch(err => {
           console.warn("Fallo revalidación de Google Forms", err);
@@ -246,11 +262,39 @@ function initCMS() {
               let subPageId = grids.length > 1 ? `${pageId}_g${idx}` : pageId;
               applyCMSConfig(globalCMSDb, grid, subPageId, isEditing);
           });
+          applyGlobalNavSync(globalCMSDb);
       });
       
     grids.forEach((grid, idx) => {
         let subPageId = grids.length > 1 ? `${pageId}_g${idx}` : pageId;
         applyCMSConfig(globalCMSDb, grid, subPageId, isEditing);
+    });
+    applyGlobalNavSync(globalCMSDb);
+}
+
+function applyGlobalNavSync(db) {
+    if(!db.pages) return;
+    let allHiddenLinks = [];
+    Object.values(db.pages).forEach(pageConfig => {
+        if(pageConfig.hiddenLinks) {
+            allHiddenLinks = allHiddenLinks.concat(pageConfig.hiddenLinks);
+        }
+    });
+    
+    // Normalizar para no afectar enlaces vacios o #
+    allHiddenLinks = allHiddenLinks.filter(h => h && !h.startsWith('#'));
+
+    document.querySelectorAll('nav.links a, .drawer a').forEach(aEl => {
+        let href = aEl.getAttribute('href');
+        if (href) {
+            // Remueve hash anchors para la comparacion
+            href = href.split('#')[0];
+            if (href && allHiddenLinks.includes(href)) {
+                aEl.style.display = 'none';
+            } else {
+                aEl.style.display = '';
+            }
+        }
     });
 }
 
@@ -385,13 +429,29 @@ function applyCMSConfig(db, grid, pageId, isEditing) {
         setTimeout(() => {
             const currentCards = Array.from(grid.querySelectorAll('article.card'));
             const currentOrder = currentCards.map(c => c.id);
-            const currentHidden = currentCards.filter(c => c.classList.contains('hidden-card')).map(c => c.id);
+            const hiddenCardsMatch = currentCards.filter(c => c.classList.contains('hidden-card'));
+            const currentHidden = hiddenCardsMatch.map(c => c.id);
+            
+            const hiddenLinks = [];
+            hiddenCardsMatch.forEach(c => {
+                const link = c.querySelector('a.btn, a[href]');
+                if(link) {
+                    let href = link.getAttribute('href');
+                    if(href) {
+                        href = href.split('#')[0];
+                        if(href) hiddenLinks.push(href);
+                    }
+                }
+            });
             
             if(!globalCMSDb.pages) globalCMSDb.pages = {};
-            globalCMSDb.pages[pageId] = { order: currentOrder, hidden: currentHidden };
+            globalCMSDb.pages[pageId] = { order: currentOrder, hidden: currentHidden, hiddenLinks: hiddenLinks };
             
             setLocalConfig(globalCMSDb);
             sendUpdateToGoogle(globalCMSDb);
+            
+            // Sincronizar dom al instante
+            applyGlobalNavSync(globalCMSDb);
             
         }, 50);
     }

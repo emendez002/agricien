@@ -1,0 +1,90 @@
+HTTrack3.49-2+htsswf+htsjava launched on Fri, 03 Apr 2026 15:17:38 at https://www.ditchassist.com/ +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "en, *" https://www.ditchassist.com/ -O1 "F:\ditchassits\ditchassists" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+15:17:40	Warning: 	Note: due to https://www.ditchassist.com remote robots.txt rules, links beginning with these path will be forbidden: /wp-admin/ (see in the options to disable this)
+15:20:05	Error: 	"Method Not Allowed" (405) at link https://www.ditchassist.com/xmlrpc.php (from https://www.ditchassist.com/)
+15:23:49	Warning: 	Retry after error -4 (Incorrect length (33471820 Bytes, 80120439 expected)) at link https://www.ditchassist.com/wp-content/uploads/user_manuals/Ditch_Assist_Quick_Start_Guides.pdf (from https://www.ditchassist.com/)
+15:24:20	Warning: 	Moved Permanently for https://www.ditchassist.com/?p=213462
+15:24:20	Warning: 	File has moved from https://www.ditchassist.com/?p=213462 to https://www.ditchassist.com
+15:24:32	Warning: 	Moved Permanently for https://www.ditchassist.com/ideal-drainage-mapping-for-ditch-assist/
+15:24:32	Warning: 	File has moved from https://www.ditchassist.com/ideal-drainage-mapping-for-ditch-assist/ to /idm-3/
+15:24:35	Warning: 	Moved Permanently for https://www.ditchassist.com/?p=213614
+15:24:35	Warning: 	File has moved from https://www.ditchassist.com/?p=213614 to https://www.ditchassist.com
+15:24:35	Warning: 	Moved Permanently for https://www.ditchassist.com/?p=208566
+15:24:35	Warning: 	File has moved from https://www.ditchassist.com/?p=208566 to https://www.ditchassist.com
+15:24:37	Warning: 	Moved Permanently for https://www.ditchassist.com/?p=208648
+15:24:37	Warning: 	File has moved from https://www.ditchassist.com/?p=208648 to https://www.ditchassist.com
+15:24:44	Warning: 	Moved Permanently for https://www.ditchassist.com/?p=209154
+15:24:44	Warning: 	File has moved from https://www.ditchassist.com/?p=209154 to https://www.ditchassist.com
+15:24:44	Warning: 	Moved Permanently for https://www.ditchassist.com/?p=212301
+15:24:44	Warning: 	File has moved from https://www.ditchassist.com/?p=212301 to https://www.ditchassist.com
+15:24:44	Warning: 	Retry after error -4 (Incorrect length (17551796 Bytes, 38616133 expected)) at link https://www.ditchassist.com/wp-content/uploads/app_releases/DA_4.22.4.apk (from https://www.ditchassist.com/app-releases/)
+15:24:44	Warning: 	Retry after error -4 (Incorrect length (20167796 Bytes, 47350854 expected)) at link https://www.ditchassist.com/wp-content/uploads/app_releases/com.AutoBotz.DitchAssist.v4.27.2.apk (from https://www.ditchassist.com/app-releases/)
+15:25:04	Warning: 	Moved Permanently for https://www.ditchassist.com/?p=210309
+15:25:04	Warning: 	File has moved from https://www.ditchassist.com/?p=210309 to https://www.ditchassist.com
+15:25:26	Warning: 	Moved Permanently for https://www.ditchassist.com/?p=209088
+15:25:26	Warning: 	File has moved from https://www.ditchassist.com/?p=209088 to https://www.ditchassist.com
+15:25:26	Warning: 	Moved Permanently for https://www.ditchassist.com/?p=209608
+15:25:26	Warning: 	File has moved from https://www.ditchassist.com/?p=209608 to https://www.ditchassist.com
+15:25:26	Warning: 	Moved Permanently for https://www.ditchassist.com/?p=209537
+15:25:26	Warning: 	File has moved from https://www.ditchassist.com/?p=209537 to https://www.ditchassist.com
+15:25:26	Warning: 	Moved Permanently for https://www.ditchassist.com/?p=209377
+15:25:26	Warning: 	File has moved from https://www.ditchassist.com/?p=209377 to https://www.ditchassist.com
+15:25:26	Warning: 	Moved Permanently for https://www.ditchassist.com/?p=208620
+15:25:26	Warning: 	File has moved from https://www.ditchassist.com/?p=208620 to https://www.ditchassist.com
+15:25:26	Warning: 	Moved Permanently for https://www.ditchassist.com/?p=209166
+15:25:26	Warning: 	File has moved from https://www.ditchassist.com/?p=209166 to https://www.ditchassist.com
+15:25:26	Warning: 	Moved Permanently for https://www.ditchassist.com/?p=213903
+15:25:26	Warning: 	File has moved from https://www.ditchassist.com/?p=213903 to https://www.ditchassist.com
+15:25:26	Warning: 	Moved Permanently for https://www.ditchassist.com/?p=213924
+15:25:26	Warning: 	File has moved from https://www.ditchassist.com/?p=213924 to https://www.ditchassist.com
+15:25:26	Warning: 	Moved Permanently for https://www.ditchassist.com/?p=213946
+15:25:26	Warning: 	File has moved from https://www.ditchassist.com/?p=213946 to https://www.ditchassist.com
+15:25:26	Warning: 	Moved Permanently for https://www.ditchassist.com/?p=213936
+15:25:26	Warning: 	File has moved from https://www.ditchassist.com/?p=213936 to https://www.ditchassist.com
+15:25:26	Warning: 	Moved Permanently for https://www.ditchassist.com/idm-3/
+15:25:26	Warning: 	File has moved from https://www.ditchassist.com/idm-3/ to /idm/
+15:25:26	Warning: 	Moved Permanently for https://www.ditchassist.com/?p=213708
+15:25:26	Warning: 	File has moved from https://www.ditchassist.com/?p=213708 to https://www.ditchassist.com/alpha-release-4-28-3-updates/
+15:25:34	Warning: 	Moved Permanently for https://www.ditchassist.com/?p=212349
+15:25:34	Warning: 	File has moved from https://www.ditchassist.com/?p=212349 to https://www.ditchassist.com/2025-new-year-dev-update-estimated-volume-in-slope-iq/
+15:25:34	Warning: 	Moved Permanently for https://www.ditchassist.com/?p=212353
+15:25:34	Warning: 	File has moved from https://www.ditchassist.com/?p=212353 to https://www.ditchassist.com/2025-new-year-dev-update-implement-width-setting/
+15:25:34	Warning: 	Moved Permanently for https://www.ditchassist.com/?p=212338
+15:25:34	Warning: 	File has moved from https://www.ditchassist.com/?p=212338 to https://www.ditchassist.com/2025-new-year-dev-update-idm-auto-download-and-increased-coverage-areas/
+15:25:34	Warning: 	Moved Permanently for https://www.ditchassist.com/?p=212332
+15:25:34	Warning: 	File has moved from https://www.ditchassist.com/?p=212332 to https://www.ditchassist.com/2025-new-year-dev-update-1-auto-nudge/
+15:25:49	Warning: 	Moved Permanently for https://www.ditchassist.com/?p=209634
+15:25:49	Warning: 	File has moved from https://www.ditchassist.com/?p=209634 to https://www.ditchassist.com/sarcastic-sam/
+15:25:56	Warning: 	Moved Permanently for https://www.ditchassist.com/?p=209605
+15:25:56	Warning: 	File has moved from https://www.ditchassist.com/?p=209605 to https://www.ditchassist.com/the-rise-of-ditch-assist-in-land-leveling-a-global-success-story/
+15:25:57	Warning: 	Moved Permanently for https://www.ditchassist.com/?p=209603
+15:25:57	Warning: 	File has moved from https://www.ditchassist.com/?p=209603 to https://www.ditchassist.com/in-depth-comparison-ditch-assist-versus-the-big-company-competitors-drainage-solutions/
+15:25:57	Warning: 	Moved Permanently for https://www.ditchassist.com/?p=209599
+15:25:57	Warning: 	File has moved from https://www.ditchassist.com/?p=209599 to https://www.ditchassist.com/discover-the-edge-with-ditch-assist-revolutionizing-surface-drainage-in-agriculture/
+15:25:57	Warning: 	Moved Permanently for https://www.ditchassist.com/?p=209246
+15:25:57	Warning: 	File has moved from https://www.ditchassist.com/?p=209246 to https://www.ditchassist.com/ditch-assist-user-manual/
+15:26:15	Warning: 	Moved Permanently for https://www.ditchassist.com/?p=209482
+15:26:15	Warning: 	File has moved from https://www.ditchassist.com/?p=209482 to https://www.ditchassist.com/ideal-drainage-mapping-a-detailed-guide-for-ditch-assist-owners/
+15:26:15	Warning: 	Moved Permanently for https://www.ditchassist.com/?p=209248
+15:26:15	Warning: 	File has moved from https://www.ditchassist.com/?p=209248 to https://www.ditchassist.com/ditch-assist-comprehensive-faq/
+15:26:15	Warning: 	Moved Permanently for https://www.ditchassist.com/?p=209236
+15:26:15	Warning: 	File has moved from https://www.ditchassist.com/?p=209236 to https://www.ditchassist.com/ditch-assist-installation-instructions/
+15:26:15	Warning: 	Moved Permanently for https://www.ditchassist.com/?p=209232
+15:26:15	Warning: 	File has moved from https://www.ditchassist.com/?p=209232 to https://www.ditchassist.com/understanding-how-ditch-assist-works/
+15:26:15	Warning: 	Moved Permanently for https://www.ditchassist.com/?p=209223
+15:26:15	Warning: 	File has moved from https://www.ditchassist.com/?p=209223 to https://www.ditchassist.com/ditch-assist-operating-principles/
+15:26:22	Warning: 	Moved Permanently for https://www.ditchassist.com/?p=209220
+15:26:22	Warning: 	File has moved from https://www.ditchassist.com/?p=209220 to https://www.ditchassist.com/quick-start-guide-to-using-ditch-assist/
+15:26:22	Warning: 	Moved Permanently for https://www.ditchassist.com/?p=209215
+15:26:22	Warning: 	File has moved from https://www.ditchassist.com/?p=209215 to https://www.ditchassist.com/ditch-assist-required-components/
+15:26:22	Warning: 	Moved Permanently for https://www.ditchassist.com/?p=209213
+15:26:22	Warning: 	File has moved from https://www.ditchassist.com/?p=209213 to https://www.ditchassist.com/ditch-assist-overview/
+
+HTTrack Website Copier/3.49-2 mirror complete in 8 minutes 44 seconds : 499 links scanned, 456 files written (393925687 bytes overall) [374742697 bytes received at 715157 bytes/sec], 22531234 bytes transferred using HTTP compression in 117 files, ratio 13%, 4.5 requests per connection
+(1 errors, 78 warnings, 0 messages)
