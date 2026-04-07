@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trifinio: La Brecha entre el Estudio y la Acción | AgriCien</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .service-card {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            border-color: #059669;
+        }
+    </style>
+</head>
+<body class="bg-stone-100 text-stone-800 font-sans antialiased">
+
+    <nav class="bg-emerald-900 text-white sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center gap-3">
+                    <a href="index.html" class="flex items-center gap-2">
+                        <img src="https://images.squarespace-cdn.com/content/v1/5bd1dc11c46f6d371c488433/1540486117041-YQVF9DGXX9520IEEVI1E/image-asset.png" alt="AgriCien" class="h-8 w-auto brightness-200">
+                        <span class="font-bold text-xl tracking-wider uppercase">Trifinio</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="hover:text-emerald-200 transition-colors">AgriCien Inicio</a>
+                    <a href="#contexto" class="hover:text-emerald-200 transition-colors">El Contexto</a>
+                    <a href="#la-brecha" class="hover:text-emerald-200 transition-colors">La Brecha</a>
+                    <a href="#desafios" class="hover:text-emerald-200 transition-colors">Desafíos & Soluciones</a>
+                </div>
+                <div class="md:hidden">
+                    <a href="index.html" class="text-sm border border-emerald-700 px-3 py-1 rounded hover:bg-emerald-800">Inicio</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-stone-200 py-16 sm:py-24 border-b border-stone-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-block px-4 py-1.5 mb-6 text-sm font-semibold tracking-wide text-emerald-800 uppercase bg-emerald-100 rounded-full">Reporte Especial de Región</div>
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-emerald-900 mb-6 tracking-tight">
+                La Paradoja del Trifinio: <br>
+                <span class="text-amber-700">Mucha Información, Pocas Soluciones</span>
+            </h1>
+            <p class="mt-4 max-w-3xl text-xl text-stone-600 mx-auto leading-relaxed">
+                Una exploración sobre los problemas hídricos y agrícolas no resueltos en El Salvador, Guatemala y Honduras. AgriCien propone un enfoque técnico para cerrar la brecha entre el diagnóstico y la ejecución.
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        <section id="contexto" class="mb-20">
+            <div class="bg-white rounded-2xl shadow-sm p-8 md:p-12 border border-stone-100">
+                <h2 class="text-3xl font-bold text-emerald-800 mb-4 border-b-2 border-emerald-100 pb-2">El Contexto: Diagnóstico vs. Realidad</h2>
+                <p class="text-lg text-stone-700 mb-6 font-light">
+                    Mientras que la academia y las ONGs han producido volúmenes de datos sobre la composición del suelo, los agricultores continúan enfrentando crisis de rendimiento. AgriCien interviene transformando esos datos en infraestructura y prácticas aplicables.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+                    <div class="bg-stone-50 p-6 rounded-xl border border-stone-200 text-center">
+                        <div class="text-4xl mb-4">📚</div>
+                        <h3 class="text-xl font-semibold text-emerald-900 mb-2">Saturación de Datos</h3>
+                        <p class="text-stone-600">Cientos de estudios topográficos realizados sin plan de ejecución.</p>
+                    </div>
+                    <div class="bg-stone-50 p-6 rounded-xl border border-stone-200 text-center">
+                        <div class="text-4xl mb-4">📉</div>
+                        <h3 class="text-xl font-semibold text-amber-700 mb-2">Declive Productivo</h3>
+                        <p class="text-stone-600">Rendimientos estancados por falta de adaptación tecnológica real.</p>
+                    </div>
+                    <div class="bg-stone-50 p-6 rounded-xl border border-stone-200 text-center">
+                        <div class="text-4xl mb-4">💧</div>
+                        <h3 class="text-xl font-semibold text-sky-700 mb-2">Estrés Hídrico</h3>
+                        <p class="text-stone-600">Falta de infraestructura de captación a pesar de la lluvia estacional.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="la-brecha" class="mb-20">
+            <div class="max-w-4xl mx-auto text-center mb-10">
+                <h2 class="text-3xl font-bold text-emerald-800 mb-4">La Brecha de Implementación</h2>
+                <p class="text-lg text-stone-700">
+                    Este embudo demuestra cómo la burocracia y la desconexión técnica impiden que los informes de suelo se conviertan en cosechas resilientes.
+                </p>
+            </div>
+            
+            <div class="bg-white rounded-2xl shadow-sm p-8 border border-stone-100 flex flex-col items-center">
+                <h3 class="text-xl font-semibold text-stone-800 mb-6 text-center">Tasa de Conversión: De la Teoría a la Práctica (Proyección Regional)</h3>
+                <div class="chart-container">
+                    <canvas id="gapChart"></canvas>
+                </div>
+                <p class="text-sm text-stone-500 mt-4 italic text-center">Datos representativos basados en el análisis de proyectos agrícolas en la región del Trifinio (2015-2023).</p>
+            </div>
+        </section>
+
+        <section id="desafios" class="mb-20">
+            <h2 class="text-3xl font-bold text-emerald-800 mb-4">Exploración de Desafíos & Soluciones AgriCien</h2>
+            <p class="text-lg text-stone-700 mb-8 max-w-4xl">
+                Seleccione una categoría para explorar los problemas específicos y las **soluciones técnicas** que AgriCien ofrece para resolverlos de forma inmediata.
+            </p>
+
+            <div class="flex flex-col md:flex-row gap-8">
+                
+                <div class="w-full md:w-1/3">
+                    <div class="bg-white rounded-2xl shadow-sm p-4 border border-stone-100 sticky top-24">
+                        <h3 class="text-lg font-bold text-stone-800 mb-4 uppercase tracking-wider text-center">Categorías</h3>
+                        <div class="flex flex-col space-y-3">
+                            <button onclick="updateDashboard('agua')" id="btn-agua" class="px-6 py-4 rounded-xl font-medium transition-all duration-200 bg-sky-100 text-sky-800 border-2 border-sky-300 hover:bg-sky-200 text-left flex items-center justify-between">
+                                <span>💧 Recursos Hídricos</span>
+                                <span class="text-xl">→</span>
+                            </button>
+                            <button onclick="updateDashboard('suelo')" id="btn-suelo" class="px-6 py-4 rounded-xl font-medium transition-all duration-200 bg-stone-100 text-stone-600 border-2 border-transparent hover:bg-stone-200 text-left flex items-center justify-between">
+                                <span>🌱 Conservación de Suelos</span>
+                                <span class="text-xl">→</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full md:w-2/3">
+                    <div class="bg-white rounded-2xl shadow-sm p-8 border border-stone-100 min-h-[500px]">
+                        
+                        <div id="content-agua" class="block">
+                            <h3 class="text-2xl font-bold text-sky-800 mb-2">Problemas Hídricos No Resueltos</h3>
+                            <p class="text-stone-600 mb-6 pb-4 border-b border-stone-200">
+                                Los estudios existen, pero la falta de infraestructura persiste. AgriCien ofrece:
+                            </p>
+                            
+                            <div class="space-y-6">
+                                <div class="bg-sky-50 p-5 rounded-lg border-l-4 border-sky-500">
+                                    <h4 class="font-bold text-lg text-sky-900">1. Cosecha y Retención de Agua</h4>
+                                    <p class="text-stone-700 mt-2">Falta de diseños para reservorios. AgriCien soluciona esto con **Diseño Hidrológico Keyline** y modelado en **AGForm-3D**.</p>
+                                    <div class="mt-4 flex gap-3">
+                                        <a href="ganaderia-sostenible.html" class="text-xs font-bold text-sky-700 hover:underline uppercase tracking-tight">Ver Diseño Hidrológico</a>
+                                        <a href="productos-agform.html" class="text-xs font-bold text-sky-700 hover:underline uppercase tracking-tight">Software AGForm-3D</a>
+                                    </div>
+                                </div>
+                                <div class="bg-sky-50 p-5 rounded-lg border-l-4 border-sky-500">
+                                    <h4 class="font-bold text-lg text-sky-900">2. Gestión Inteligente de Riego</h4>
+                                    <p class="text-stone-700 mt-2">Déficit severo en épocas secas. Implementamos tecnología **MAHER** para automatización de riego y ahorro de agua.</p>
+                                    <div class="mt-4">
+                                        <a href="productos-maher.html" class="text-xs font-bold text-sky-700 hover:underline uppercase tracking-tight">Ver Sistemas MAHER</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-8 pt-6 border-t border-stone-200">
+                                <h4 class="font-bold text-center text-stone-800 mb-4">Disponibilidad Hídrica vs. Demanda Agrícola (Promedio Mensual)</h4>
+                                <div class="chart-container">
+                                    <canvas id="waterChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="content-suelo" class="hidden">
+                            <h3 class="text-2xl font-bold text-amber-800 mb-2">Problemas de Suelo No Resueltos</h3>
+                            <p class="text-stone-600 mb-6 pb-4 border-b border-stone-200">
+                                Prácticas inadecuadas y erosión. AgriCien aporta:
+                            </p>
+                            
+                            <div class="space-y-6">
+                                <div class="bg-amber-50 p-5 rounded-lg border-l-4 border-amber-500">
+                                    <h4 class="font-bold text-lg text-amber-900">1. Mitigación de Erosión</h4>
+                                    <p class="text-stone-700 mt-2">Riesgo en laderas sin medidas. Utilizamos **Nivelación con Los Antonios** y control de pendiente con **DitchAssist**.</p>
+                                    <div class="mt-4 flex gap-3">
+                                        <a href="productos-losantonios.html" class="text-xs font-bold text-amber-700 hover:underline uppercase tracking-tight">Maquinaria Los Antonios</a>
+                                        <a href="productos-ditchassist.html" class="text-xs font-bold text-amber-700 hover:underline uppercase tracking-tight">Sistemas DitchAssist</a>
+                                    </div>
+                                </div>
+                                <div class="bg-amber-50 p-5 rounded-lg border-l-4 border-amber-500">
+                                    <h4 class="font-bold text-lg text-amber-900">2. Monitoreo de Nutrientes y Salud</h4>
+                                    <p class="text-stone-700 mt-2">Pérdida de materia orgánica. Sensores **Falker** para medición en tiempo real y toma de decisiones basada en datos.</p>
+                                    <div class="mt-4">
+                                        <a href="productos-falker.html" class="text-xs font-bold text-amber-700 hover:underline uppercase tracking-tight">Ver Equipos Falker</a>
+                                    </div>
+                                </div>
+                                <div class="bg-amber-50 p-5 rounded-lg border-l-4 border-amber-500">
+                                    <h4 class="font-bold text-lg text-amber-900">3. Análisis Multitemporal</h4>
+                                    <p class="text-stone-700 mt-2">Falta de seguimiento de la regeneración. **Factibilidad Agrícola** y **Analítica** para visualizar el progreso real.</p>
+                                    <div class="mt-4 flex gap-3">
+                                        <a href="factibilidad-agricola.html" class="text-xs font-bold text-amber-700 hover:underline uppercase tracking-tight">Factibilidad</a>
+                                        <a href="analitica-agricola.html" class="text-xs font-bold text-amber-700 hover:underline uppercase tracking-tight">Analítica BI</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="servicios-asociados" class="mb-20">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-emerald-800">Servicios AgriCien para la Región</h2>
+                <p class="text-lg text-stone-600">Herramientas probadas para cerrar la brecha técnica en el Trifinio.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <a href="agricultura-precision.html" class="service-card bg-white p-6 rounded-2xl">
+                    <div class="text-2xl mb-3">🛰️</div>
+                    <h4 class="font-bold text-emerald-900">Precisión</h4>
+                    <p class="text-sm text-stone-600 mt-2">Arquitectura de fincas y vuelos con drones para diseño exacto.</p>
+                </a>
+                <a href="procesamiento-lidar.html" class="service-card bg-white p-6 rounded-2xl">
+                    <div class="text-2xl mb-3">☁️</div>
+                    <h4 class="font-bold text-emerald-900">LiDAR</h4>
+                    <p class="text-sm text-stone-600 mt-2">Modelos digitales de terreno para obras hídricas de alta precisión.</p>
+                </a>
+                <a href="productos-mapitgis.html" class="service-card bg-white p-6 rounded-2xl">
+                    <div class="text-2xl mb-3">📍</div>
+                    <h4 class="font-bold text-emerald-900">Mapit GIS</h4>
+                    <p class="text-sm text-stone-600 mt-2">Recolección de datos en campo con precisión submétrica.</p>
+                </a>
+                <a href="certificaciones-ambientales.html" class="service-card bg-white p-6 rounded-2xl">
+                    <div class="text-2xl mb-3">📜</div>
+                    <h4 class="font-bold text-emerald-900">Certificación</h4>
+                    <p class="text-sm text-stone-600 mt-2">Cumplimiento ambiental y auditoría geoespacial para exportación.</p>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-stone-900 text-stone-400 py-12">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div>
+                <img src="https://images.squarespace-cdn.com/content/v1/5bd1dc11c46f6d371c488433/1540486117041-YQVF9DGXX9520IEEVI1E/image-asset.png" alt="AgriCien" class="h-10 w-auto mb-4 brightness-200">
+                <p class="text-sm max-w-md">Análisis de Brechas en la Implementación Agrícola - Región del Trifinio. Facilitando la transición de los datos a la toma de decisiones accionables.</p>
+            </div>
+            <div class="flex flex-col md:items-end gap-2">
+                <p class="text-stone-300 font-bold">AgriCien</p>
+                <div class="flex gap-4 text-sm">
+                    <a href="index.html" class="hover:text-white transition-colors">Volver al Inicio</a>
+                    <a href="index.html#contacto" class="hover:text-white transition-colors">Contactar un Experto</a>
+                </div>
+                <p class="text-xs mt-4">© 2026 AgriCien. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            const gapCtx = document.getElementById('gapChart').getContext('2d');
+            new Chart(gapCtx, {
+                type: 'bar',
+                data: {
+                    labels: [
+                        'Estudios Realizados', 
+                        'Diagnóstico Claro', 
+                        'Rec. Prácticas', 
+                        'Proyectos Financiados', 
+                        'Implementado'
+                    ],
+                    datasets: [{
+                        label: 'Retención de Acción (%)',
+                        data: [100, 85, 35, 12, 5],
+                        backgroundColor: [
+                            '#065f46', 
+                            '#059669', 
+                            '#34d399', 
+                            '#fbbf24', 
+                            '#b45309'  
+                        ],
+                        borderWidth: 0,
+                        borderRadius: 6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.parsed.y + '% del total inicial';
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            title: { display: true, text: 'Porcentaje (%)' }
+                        }
+                    }
+                }
+            });
+
+            const waterCtx = document.getElementById('waterChart').getContext('2d');
+            new Chart(waterCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+                    datasets: [
+                        {
+                            label: 'Disponibilidad de Agua (mm)',
+                            data: [15, 10, 5, 20, 150, 220, 180, 200, 250, 180, 80, 30],
+                            borderColor: '#0284c7',
+                            backgroundColor: 'rgba(2, 132, 199, 0.1)',
+                            borderWidth: 3,
+                            fill: true,
+                            tension: 0.4
+                        },
+                        {
+                            label: 'Demanda Agrícola (mm)',
+                            data: [80, 90, 100, 110, 120, 100, 110, 100, 90, 80, 80, 80],
+                            borderColor: '#b45309',
+                            borderDash: [5, 5],
+                            borderWidth: 2,
+                            fill: false,
+                            tension: 0.4
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: {
+                        mode: 'index',
+                        intersect: false,
+                    },
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                footer: function(tooltipItems) {
+                                    let disp = tooltipItems[0].parsed.y;
+                                    let dem = tooltipItems[1].parsed.y;
+                                    if (dem > disp) {
+                                        return '⚠️ Déficit Hídrico: ' + (dem - disp).toFixed(0) + ' mm';
+                                    } else {
+                                        return 'Excedente: ' + (disp - dem).toFixed(0) + ' mm';
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            title: { display: true, text: 'Milímetros (mm)' }
+                        }
+                    }
+                }
+            });
+        });
+
+        function updateDashboard(category) {
+            const contentAgua = document.getElementById('content-agua');
+            const contentSuelo = document.getElementById('content-suelo');
+            const btnAgua = document.getElementById('btn-agua');
+            const btnSuelo = document.getElementById('btn-suelo');
+
+            const activeBtnClasses = ['bg-sky-100', 'text-sky-800', 'border-sky-300'];
+            const inactiveBtnClasses = ['bg-stone-100', 'text-stone-600', 'border-transparent'];
+            const activeSueloClasses = ['bg-amber-100', 'text-amber-800', 'border-amber-300'];
+
+            if (category === 'agua') {
+                contentAgua.classList.remove('hidden');
+                contentSuelo.classList.add('hidden');
+                btnAgua.classList.remove(...inactiveBtnClasses);
+                btnAgua.classList.add(...activeBtnClasses);
+                btnSuelo.classList.remove(...activeSueloClasses);
+                btnSuelo.classList.add(...inactiveBtnClasses);
+            } else {
+                contentSuelo.classList.remove('hidden');
+                contentAgua.classList.add('hidden');
+                btnSuelo.classList.remove(...inactiveBtnClasses);
+                btnSuelo.classList.add(...activeSueloClasses);
+                btnAgua.classList.remove(...activeBtnClasses);
+                btnAgua.classList.add(...inactiveBtnClasses);
+            }
+        }
+    </script>
+</body>
+</html>

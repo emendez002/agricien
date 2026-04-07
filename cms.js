@@ -20,6 +20,40 @@ function setLocalConfig(cb) {
     localStorage.setItem('agricienCMSGlobal', JSON.stringify(cb));
 }
 
+// Carga dinámica de React para herramientas administrativas
+function loadReactAdmin(callback) {
+    if (window.React) {
+        callback();
+        return;
+    }
+    const scripts = [
+        'https://unpkg.com/react@18/umd/react.production.min.js',
+        'https://unpkg.com/react-dom@18/umd/react-dom.production.min.js',
+        'https://unpkg.com/@babel/standalone/babel.min.js'
+    ];
+    let loaded = 0;
+    scripts.forEach(src => {
+        const s = document.createElement('script');
+        s.src = src;
+        s.onload = () => {
+            loaded++;
+            if (loaded === scripts.length) {
+                // Una vez cargado React y Babel, cargamos el componente AddProductForm
+                fetch('AddProductForm.jsx')
+                    .then(r => r.text())
+                    .then(code => {
+                        const transpiled = Babel.transform(code, { presets: ['react'] }).code;
+                        const script = document.createElement('script');
+                        script.innerHTML = transpiled;
+                        document.head.appendChild(script);
+                        callback();
+                    });
+            }
+        };
+        document.head.appendChild(s);
+    });
+}
+
 // Parseador nativo de CSV para Sheets configs
 function parseCSVLastJSON(csv) {
     if(!csv || !csv.includes(',')) return null;
@@ -270,7 +304,80 @@ function initCMS() {
         applyCMSConfig(globalCMSDb, grid, subPageId, isEditing);
     });
     applyGlobalNavSync(globalCMSDb);
+
+    if (isEditing) {
+        loadReactAdmin(() => {
+            initAdminExtraUI();
+        });
+    }
 }
+
+function initAdminExtraUI() {
+    // Inyectar contenedor para React Modal
+    if (!document.getElementById('cms-react-root')) {
+        const root = document.createElement('div');
+        root.id = 'cms-react-root';
+        document.body.appendChild(root);
+    }
+
+    // Inyectar botones de "+" en los headers de las secciones con grids
+    const grids = document.querySelectorAll('.grid3, .servicesGrid, .grid');
+    grids.forEach((grid, idx) => {
+        const section = grid.closest('section');
+        if (section) {
+            const head = section.querySelector('.sectionHead div');
+            if (head && !head.querySelector('.admin-add-item-btn')) {
+                const btn = document.createElement('button');
+                btn.className = 'admin-add-item-btn';
+                btn.innerHTML = '<span>+</span> Añadir Ítem';
+                
+                // Obtener el nombre de la categoría (título de la sección)
+                const catTitle = head.querySelector('h2')?.textContent || 'General';
+                
+                btn.onclick = () => {
+                    renderAddModal(true, catTitle);
+                };
+                head.appendChild(btn);
+            }
+        }
+    });
+}
+
+function renderAddModal(isOpen, category) {
+    const rootEl = document.getElementById('cms-react-root');
+    if (!rootEl || !window.AddProductForm) return;
+
+    const root = ReactDOM.createRoot(rootEl);
+    root.render(
+        React.createElement(window.AddProductForm, {
+            isOpen: isOpen,
+            onClose: () => { 
+                root.unmount(); 
+                // No necesitamos recargar aquí porque Success screen tiene su propio delay
+            },
+            categoryName: category
+        })
+    );
+}
+
+// Función global de sincronización para el panel
+window.syncCMSData = async function() {
+    try {
+        const res = await fetch(SHEET_CSV_URL, { cache: "no-store" });
+        const csvText = await res.text();
+        const remoteJson = parseCSVLastJSON(csvText);
+        if(remoteJson && remoteJson.pages) {
+            globalCMSDb = remoteJson;
+            setLocalConfig(globalCMSDb);
+            alert('Datos sincronizados correctamente desde Google Sheets.');
+            window.location.reload();
+        } else {
+            alert('No se encontraron datos nuevos aún. Google Sheets puede tardar unos segundos en publicar el CSV.');
+        }
+    } catch(e) {
+        alert('Error al sincronizar: ' + e.message);
+    }
+};
 
 function applyGlobalNavSync(db) {
     if(!db.pages) return;
