@@ -10,6 +10,7 @@ const USERS_CSV_URL = 'https://docs.google.com/spreadsheets/d/1t3aJFZtFUl8EcgWi8
 const USERS_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSeTI3wUNzx0bVHDgwe9MtfSstDY0LgBD1rUcKFvcesCteERAg/formResponse';
 const USERS_EMAIL_ENTRY = 'entry.137980382';
 const USERS_ROLE_ENTRY = 'entry.1166896746';
+const CATALOG_CSV_URL = 'https://docs.google.com/spreadsheets/d/1QXsp64rDLDIux2ojykOGND95R5Zd9yQjG3QEVxLjrgM/export?format=csv';
 
 // Para evitar parpadeos "Stale-while-Revalidate"
 function getLocalConfig() {
@@ -78,6 +79,87 @@ function parseCSVLastJSON(csv) {
         console.error('Error parseando DB remota:', e);
         return null;
     }
+}
+
+// Parseador de CSV de Catálogo de Productos (maneja comas y saltos de línea dentro de comillas)
+function parseCatalogCSV(csv) {
+    if (!csv) return [];
+    
+    const result = [];
+    let row = [];
+    let field = '';
+    let inQuotes = false;
+
+    for (let i = 0; i < csv.length; i++) {
+        const char = csv[i];
+        const nextChar = csv[i + 1];
+
+        if (char === '"') {
+            if (inQuotes && nextChar === '"') {
+                field += '"';
+                i++; // saltar el siguiente
+            } else {
+                inQuotes = !inQuotes;
+            }
+        } else if (char === ',' && !inQuotes) {
+            row.push(field.trim());
+            field = '';
+        } else if (char === '\n' && !inQuotes) {
+            row.push(field.trim());
+            if (row.length >= 5) {
+                result.push({
+                    timestamp: row[0],
+                    section: row[1],
+                    title: row[2],
+                    description: row[3],
+                    imageUrl: row[4]
+                });
+            }
+            row = [];
+            field = '';
+        } else {
+            field += char;
+        }
+    }
+    
+    // Último campo/fila
+    if (field || row.length > 0) {
+        row.push(field.trim());
+        if (row.length >= 5) {
+            result.push({
+                timestamp: row[0],
+                section: row[1],
+                title: row[2],
+                description: row[3],
+                imageUrl: row[4]
+            });
+        }
+    }
+
+    // Saltar cabecera
+    return result.filter((item, idx) => idx > 0 || (item.timestamp && !item.timestamp.toLowerCase().includes('marca')));
+}
+
+function renderDynamicCard(item) {
+    const cardId = 'dyn_' + item.title.trim().toLowerCase().replace(/[^a-z0-9]/g, '');
+    const article = document.createElement('article');
+    article.className = 'card';
+    article.id = cardId;
+    article.style.display = 'flex';
+    article.style.flexDirection = 'column';
+    article.style.justifyContent = 'space-between';
+    
+    article.innerHTML = `
+        <div>
+          <div style="width:100%; height:160px; border-radius:12px; overflow:hidden; margin-bottom:14px; background:#000;">
+            <img src="${item.imageUrl}" style="width:100%; height:100%; object-fit:cover;" alt="${item.title}" onerror="this.src='https://via.placeholder.com/400x300?text=Imagen+no+disponible'">
+          </div>
+          <h3 style="color: var(--brand2);">${item.title}</h3>
+          <p style="font-size:13px; margin-bottom:14px; line-height:1.5;">${item.description}</p>
+        </div>
+        <div><a href="#contacto" class="btn primary" style="width:100%;">Quiero cotizar</a></div>
+    `;
+    return article;
 }
 
 // Envío a Google Forms hiper robusto (Iframe anti-CORS y anti-Bloqueadores)
@@ -271,34 +353,52 @@ function initCMS() {
         return; 
     }
     
-    fetch(SHEET_CSV_URL, { cache: "no-store" })
-      .then(r => r.text())
-      .then(csvText => {
-          const remoteJson = parseCSVLastJSON(csvText);
-          if(remoteJson && remoteJson.pages) {
-              globalCMSDb = remoteJson;
-              setLocalConfig(globalCMSDb); 
-              grids.forEach((grid, idx) => {
-                  let subPageId = grids.length > 1 ? `${pageId}_g${idx}` : pageId;
-                  applyCMSConfig(globalCMSDb, grid, subPageId, isEditing);
-              });
-              applyGlobalNavSync(globalCMSDb);
-          } else {
-              grids.forEach((grid, idx) => {
-                  let subPageId = grids.length > 1 ? `${pageId}_g${idx}` : pageId;
-                  applyCMSConfig(globalCMSDb, grid, subPageId, isEditing);
-              });
-              applyGlobalNavSync(globalCMSDb);
-          }
-      }).catch(err => {
-          console.warn("Fallo revalidación de Google Forms", err);
-          grids.forEach((grid, idx) => {
-              let subPageId = grids.length > 1 ? `${pageId}_g${idx}` : pageId;
-              applyCMSConfig(globalCMSDb, grid, subPageId, isEditing);
-          });
-          applyGlobalNavSync(globalCMSDb);
-      });
-      
+    // Carga paralela de Configuración Global y Catálogo de Productos
+    Promise.all([
+        fetch(SHEET_CSV_URL, { cache: "no-store" }).then(r => r.text()),
+        fetch(CATALOG_CSV_URL, { cache: "no-store" }).then(r => r.text())
+    ]).then(([configCsv, catalogCsv]) => {
+        const remoteJson = parseCSVLastJSON(configCsv);
+        const catalogItems = parseCatalogCSV(catalogCsv);
+
+        if (remoteJson && remoteJson.pages) {
+            globalCMSDb = remoteJson;
+            setLocalConfig(globalCMSDb);
+        }
+
+        grids.forEach((grid, idx) => {
+            let subPageId = grids.length > 1 ? `${pageId}_g${idx}` : pageId;
+            
+            // Inyectar items de catálogo pertinentes a esta sección
+            const section = grid.closest('section');
+            const sectionTitle = section ? section.querySelector('h2')?.textContent.trim() : null;
+            
+            if (sectionTitle) {
+                catalogItems.forEach(item => {
+                    if (item.section === sectionTitle) {
+                        // Evitar duplicados por ID
+                        const cardId = 'dyn_' + item.title.trim().toLowerCase().replace(/[^a-z0-9]/g, '');
+                        if (!document.getElementById(cardId)) {
+                            grid.appendChild(renderDynamicCard(item));
+                        }
+                    }
+                });
+            }
+
+            applyCMSConfig(globalCMSDb, grid, subPageId, isEditing);
+        });
+        applyGlobalNavSync(globalCMSDb);
+
+    }).catch(err => {
+        console.warn("Fallo revalidación de Google Sheets:", err);
+        grids.forEach((grid, idx) => {
+            let subPageId = grids.length > 1 ? `${pageId}_g${idx}` : pageId;
+            applyCMSConfig(globalCMSDb, grid, subPageId, isEditing);
+        });
+        applyGlobalNavSync(globalCMSDb);
+    });
+
+    // Aplicación inmediata desde caché local
     grids.forEach((grid, idx) => {
         let subPageId = grids.length > 1 ? `${pageId}_g${idx}` : pageId;
         applyCMSConfig(globalCMSDb, grid, subPageId, isEditing);
